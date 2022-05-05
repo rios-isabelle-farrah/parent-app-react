@@ -15,7 +15,7 @@ const FilesIndex = ({ file }) => {
  
   return (
     <div>
-          <div className="studentCard__name">
+          <div className="child__name">
           File Name: {file.child_name} 
         </div>
     </div>
