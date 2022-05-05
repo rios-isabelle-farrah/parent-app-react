@@ -40,5 +40,11 @@
  */
  .App {
   margin: 20px;
+  background-color: yellow;
+height: 100%;
+}
 
+.app-heading{
+  color:blue;
+  font-size: larger;
 }
