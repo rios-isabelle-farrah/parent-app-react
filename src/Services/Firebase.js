@@ -17,14 +17,15 @@ import {
   addDoc,
 } from "firebase/firestore";
 const firebaseConfig = {
-  apiKey: "AIzaSyDIXJ5YT7hoNbBFqK3TBcV41-TzIO-7n7w",
-  authDomain: "fir-auth-6edd8.firebaseapp.com",
-  projectId: "fir-auth-6edd8",
-  storageBucket: "fir-auth-6edd8.appspot.com",
-  messagingSenderId: "904760319835",
-  appId: "1:904760319835:web:44fd0d957f114b4e51447e",
-  measurementId: "G-Q4TYKH9GG7",
+  apiKey: "AIzaSyBL6HOcOvesfaa9m1z3el2kDjm_TlxN6rk",
+  authDomain: "glossy-protocol-314323.firebaseapp.com",
+  projectId: "glossy-protocol-314323",
+  storageBucket: "glossy-protocol-314323.appspot.com",
+  messagingSenderId: "611745384469",
+  appId: "1:611745384469:web:c14d18c75480b72199261c",
+  measurementId: "G-956DMRN27M"
 };
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);

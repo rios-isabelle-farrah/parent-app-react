@@ -3,6 +3,32 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../Services/Firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./Login.css";
+
+
+import { AiFillLock } from "react-icons/ai";
+import { FcKey } from "react-icons/fc";
+import { SiTwitter } from "react-icons/si";
+import { FaInstagramSquare } from "react-icons/fa";
+import { GrFacebook } from "react-icons/gr";
+
+// import TripLogo from "./Images/hands.png";
+import green from "../Components/Images/greenLend.png";
+import dsLogo from "../Components/Images/logods.jpeg";
+// import flyer from "../Components/Images/flyer.png";
+import skinny from "../Components/Images/skinny.png";
+import whatlend from "../Components/Images/whatlend.png";
+import psg from "../Components/Images/psg.png";
+// import squares from "../Components/Images/squares.png";
+
+
+
+
+
+
+
+
+
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,39 +42,99 @@ function Login() {
     if (user) navigate("/dashboard");
   }, [user, loading]);
   return (
-    <div className="login">
-      <div className="login__container">
-        <input
-          type="text"
-          className="login__textBox"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="E-mail Address"
+    <div className="sign-box">
+      
+      
+      
+      
+      
+      
+      
+    <div className="top">
+      <div className="sunydiv">
+        <img
+          className="ds-logo"
+          src={dsLogo}
+          style={{
+            height: "47px",
+            // width: "215px",
+            // marginTop: "140px",
+            // marginLeft: "30px",
+          }}
+          alt={"Logo"}
         />
-        <input
-          type="password"
-          className="login__textBox"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-        />
-        <button
-          className="login__btn"
-          onClick={() => logInWithEmailAndPassword(email, password)}
-        >
-          Login
+      </div>
+
+     
+      <div className="icon-div">
+      <div className="social-icons">
+        <FcKey />
+        <SiTwitter />
+        <FaInstagramSquare />
+        <GrFacebook />
+      </div>
+        <button className="sign-in" onClick={signInWithGoogle}>
+          <AiFillLock />
+          Advocate <br></br>Sign In
         </button>
-        <button className="login__btn login__google" onClick={signInWithGoogle}>
-          Login with Google
-        </button>
-        <div>
-          <Link to="/reset">Forgot Password</Link>
-        </div>
-        <div>
-          Don't have an account? <Link to="/register">Register</Link> now.
-        </div>
       </div>
     </div>
+
+    <nav className="nav-login">
+      <div className="lend-stretch">
+        <img className="green-logo" src={green} alt={"Logo"} />
+       
+      </div>
+    </nav>
+
+    {/* --------------------------------- */}
+    {/* Log in */}
+
+    <div className="nav-ul">
+      
+     
+     
+    </div>
+
+
+    {/* --------------------------------------- */}
+    <div className="login-body">
+    <section className="grabber">
+      <div className="grab"><div className="left-MJ">
+       
+       <img className="skinny" src={skinny} alt={skinny} />
+       <div className="moreinfo">
+         
+       <a className="beige" href="#trainings">Find out more about the advocacy training series.</a></div>
+                    
+               </div>
+       
+               <div className="right">
+                 <img className="psg" src={psg} alt={psg} />
+                 <img className="psgz" src="https://cdn.givecloud.co/s/files/1/0000/0613/files/diverse-adults-virtual-meeting-istock-1254704747.jpg" alt={psg} />
+              <div className="us">contact us</div>
+               </div></div>
+      <div className="footer">something</div>
+    </section>
+
+      <a name="more">
+        <section className="more-lend">
+          <img className="whatlend" src={whatlend} alt={"whatlend"} />
+        </section>
+      </a>
+      <a name="parent">
+        <section className="parent"> </section>
+      </a>
+      <a name="trainings">
+       
+      </a>
+      <a name="resources">
+        <section className="resources">
+          {/* <ZipSearch /> */}
+        </section>
+      </a>
+    </div>
+  </div>
   );
 }
 export default Login;
