@@ -1,23 +1,11 @@
 import React from "react";
+import Files from "../../Components/Files/Files";
+// import "../../Components/Style/Files/FilesIndex.css";
 
-
-
-const FilesIndex = ({ file }) => {
-
-  //alert the name of the students on clicking the card
-  const alertName = (event) => {
-    //event.preventDefault();
-    event.stopPropagatiaon();
-    console.log(event.target.innerText);
-    // alert(event.target.innerText);
-  }
-
- 
+const FilesIndex = () => {
   return (
-    <div>
-          <div className="child__name">
-          File Name: {file.child_name} 
-        </div>
+    <div className="Files-index">
+      <Files/>
     </div>
   );
 };

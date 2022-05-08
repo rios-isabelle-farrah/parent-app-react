@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../Services/Firebase";
+import React, { useEffect} from "react";
+import { useNavigate } from "react-router-dom";
+import { auth, signInWithGoogle } from "../Services/Firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./Login.css";
 
@@ -16,7 +16,7 @@ import green from "../Components/Images/greenLend.png";
 import dsLogo from "../Components/Images/logods.jpeg";
 // import flyer from "../Components/Images/flyer.png";
 import skinny from "../Components/Images/skinny.png";
-import whatlend from "../Components/Images/whatlend.png";
+// import whatlend from "../Components/Images/whatlend.png";
 import psg from "../Components/Images/psg.png";
 // import squares from "../Components/Images/squares.png";
 
@@ -30,17 +30,22 @@ import psg from "../Components/Images/psg.png";
 
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [user, loading, error] = useAuthState(auth);
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
   useEffect(() => {
     if (loading) {
       // maybe trigger a loading screen
       return;
     }
-    if (user) navigate("/dashboard");
-  }, [user, loading]);
+    if (user) navigate("/files");
+  }, [user, loading, navigate]);
+
+
+
+
+
   return (
     <div className="sign-box">
       
@@ -105,7 +110,7 @@ function Login() {
        <img className="skinny" src={skinny} alt={skinny} />
        <div className="moreinfo">
          
-       <a className="beige" href="#trainings">Find out more about the advocacy training series.</a></div>
+</div>
                     
                </div>
        
@@ -117,22 +122,9 @@ function Login() {
       <div className="footer">something</div>
     </section>
 
-      <a name="more">
-        <section className="more-lend">
-          <img className="whatlend" src={whatlend} alt={"whatlend"} />
-        </section>
-      </a>
-      <a name="parent">
-        <section className="parent"> </section>
-      </a>
-      <a name="trainings">
-       
-      </a>
-      <a name="resources">
-        <section className="resources">
-          {/* <ZipSearch /> */}
-        </section>
-      </a>
+   
+  
+     
     </div>
   </div>
   );
