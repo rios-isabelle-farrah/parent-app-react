@@ -47,6 +47,7 @@
 //import { signInWithGoogle, signup, login } from "../Services/Firebase";
 
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import Files from "./Files/Files"
@@ -79,6 +80,7 @@ function Dashboard() {
 <div className="d-board">    
 <div className="dashboard">
         <div className="blue">
+        
           <Files/>
         </div>
        <div className="dashboard__container">

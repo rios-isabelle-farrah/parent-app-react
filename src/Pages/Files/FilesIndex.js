@@ -5,7 +5,7 @@ import Files from "../../Components/Files/Files";
 const FilesIndex = () => {
   return (
     <div className="Files-index">
-      <Files/>
+      <Files/>  
     </div>
   );
 };

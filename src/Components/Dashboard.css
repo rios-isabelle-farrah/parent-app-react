@@ -36,3 +36,13 @@
     height: 90%;
     width:90%;
   }
+  .button-newfile{
+    height: 200px;
+    width: 900px;
+    background-color: purple;
+  }
+  .circle-file{
+    background-color: aquamarine;
+    height: 70px;
+    width: 50px;
+  }

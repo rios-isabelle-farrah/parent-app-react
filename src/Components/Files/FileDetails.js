@@ -1,47 +1,88 @@
-import { useParams} from "react-router-dom";
-import React, { useState, useEffect } from "react";
-import axios from "axios"
-import { apiURL } from "../../util/apiURL";
-// import FilesListItem from "./FilesListItem"
+import React, { useEffect} from "react";
+import { useParams, useNavigate} from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+// import { UserContext } from "../../Providers/UserProvider";
+import {
+  deleteFileByID,
+  getAllMeetingsFN,
+} from "../../util/networkRequest";
+import { addMeetings } from "../../Store/Actions/meetingsActions";
+
+
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
-
+import LeftNav from "./LeftNav";
 // import CenterPanel from "./DetailComps/CenterPanel";
 // import RightPanel from "./DetailComps/RightPanel";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
-const API = apiURL();
+
 function FileDetails() {
-const [files, setFiles] = useState([]);
+  const entireState = useSelector((state) => state);
+  const { files, meetings} = entireState;
+  // const user = useContext(UserContext);
+  const meetingsArr = Object.values(meetings);
+  const dispatch = useDispatch();
   let { id } = useParams();
+  let navigate = useNavigate();
 
 
+  // const deleteFile = async () => {
+  //   try {
+  //     await deleteFileByID(id);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
+  // const handleDelete = async () => {
+  //   try {
+  //     await deleteFile();
+  //    return navigate("/files");
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   useEffect(() => {
-  const getAllFiles = async () => {
-    try {
+    const getAllMeetings = async () => {
+      try {
+        if (id) {
+          let res = await getAllMeetingsFN(id);
+          dispatch(addMeetings(res));
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getAllMeetings();
+  }, [id, dispatch]);
+
+  if (!id) {
+    return <div className="spinner-border"></div>;
+  } else {
     
-        let res = await axios.get(
-          `${API}/files`
-        );
-        setFiles(res.data.payload);
-      console.log(res.data.payload,"results")
-    } catch (err) {
-      console.log(err);
-    }
-  };
- getAllFiles();
+    let file = files[id];
+
+    // let totalMeetings = 0;
+    let meetings = [["Meeting", "Date", "Details"]];
+    meetingsArr.forEach((meeting) => {
+      let newDate = new Date(meeting.date);
+      let year = newDate.getFullYear();
+      if (meeting) {
+        if (year === 2022) {
+          meetings.push([
+            `${meeting.category}`,
+            `${newDate.toLocaleDateString()}`,
+            `$${meeting.details.toLocaleString()}`,
+          ]);
+          
+        }
+      }
+    });
+
 
  
-}, []);
 
-
-
-
-
-
-  
-  
-    let file = files[id];
     const handleReport = () => {
       file = files[id];
       let documentDefinition = {
@@ -55,7 +96,7 @@ const [files, setFiles] = useState([]);
         },
         content: [
           {
-            text: `Name: ${file?.student_name} `,
+            text: `Name: ${file?.child_name} `,
             bold: true,
             fontSize: 20,
             alignment: "center",
@@ -69,16 +110,38 @@ const [files, setFiles] = useState([]);
               height: "100",
               body: [
                 [{ text: "File details", bold: true, fontSize: 15 }],
-                [`File Name: ${file?.child_name}`],
-                [`File Details: ${file?.details}`],
+                [`name: ${file?.child_name}`],
+                [`details: ${file?.details}`],
+           
               ],
               fontSize: 40,
             },
           },
+
+          {
+            pageBreak: "before",
+            text: `${file?.child_name} ${file?.details} meetings in 2022`,
+            bold: true,
+            fontSize: 20,
+            alignment: "center",
+            margin: [0, 20],
+          },
+          {
+            layout: "lightHorizontalLines",
+            table: {
+              headerRows: 1,
+              widths: ["*", "30%", "20%"],
+              height: "100",
+              body: meetings,
+              fontSize: 40,
+            },
+          },
+       
+     
+
         ],
       };
-
-      console.log(documentDefinition, "docDef");
+console.log(documentDefinition,"docDef")
       const pdfDoc = pdfMake
         .createPdf(documentDefinition)
         .download(`${file?.child_name}.pdf`);
@@ -86,32 +149,12 @@ const [files, setFiles] = useState([]);
     };
 
     return (
-      <section className="car-section">
-   <div className="chrome">
-          <div className="nav-expenses">
-            <button onClick={handleReport} className="cars-new-button">
-              🗂 Generate Report    
-            </button>
-          </div>
-        </div>
+      <section className="file-section">
+        <LeftNav id={id} handleReport={handleReport}/>
 
-        {/* <CenterPanel file={file} id={id} handleDelete={handleDelete} /> */}
-        {/* 
-        <RightPanel
-          id={id}
-          car={car}
-          expensesArr={expensesArr}
-          tripsArr={tripsArr}
-        /> */}
       </section>
     );
-
-
-
-
-
-
-  
+  }
 }
 
 export default FileDetails;

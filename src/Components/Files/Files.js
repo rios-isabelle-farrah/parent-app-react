@@ -1,43 +1,47 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios"
-import { apiURL } from "../../util/apiURL";
-import FilesListItem from "./FilesListItem"
 
-const API = apiURL();
+
+import React, { useEffect, useContext } from "react";
+import "../../App.css";
+import { useSelector, useDispatch } from "react-redux";
+import { addFiles } from "../../Store/Actions/filesActions";
+import { getAllFilesFN } from "../../util/networkRequest";
+//import { UserContext } from "../../Providers/UserProvider";
+import { Link} from "react-router-dom";
+import FilesListItem from "./FilesListItem";
+//import "../../Components/Style/Files/Files.css";
+
 const Files = () => {
-
-  const [files, setFiles] = useState([]);
-// const navigate = useNavigate();
-  
+  const entireState = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const { files } = entireState;
+  // const user = useContext(UserContext);
+  //const history = useHistory();
+  const filesArr = Object.values(files);
 
   useEffect(() => {
-    const getAllFiles = async () => {
+    const fetchAllFiles = async () => {
       try {
-      
-          let res = await axios.get(
-            `${API}/files`
-          );
-          setFiles(res.data.payload);
-        console.log(res.data.payload,"results")
-      } catch (err) {
-        console.log(err);
+       
+          const res = await getAllFilesFN();
+          dispatch(addFiles(res));
+        
+      } catch (error) {
+        console.log(error);
       }
     };
-   getAllFiles();
-
-   
-  }, []);
-
-  console.log(files,"files") 
-
+    fetchAllFiles();
+  }, [dispatch]);
+console.log(filesArr, "files array")
+ 
 
   return (
-    <div className="fileItem">
-      {files.map((file, index) => {
-        return ( 
-            <FilesListItem file={file} key={index}/>
-        )
-      })}
+    <div className="files-div">
+      <div className="button-newfile">
+        <Link to={`/files/file/new`}>
+          <div className="circle-file"></div>
+        </Link>
+      </div>
+      <FilesListItem filesArr={filesArr} files={files} /> 
     </div>
   );
 };

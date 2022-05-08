@@ -6,6 +6,7 @@ import Login from "./Components/Login";
 //import Reset from "./Components/Reset";
 import Dashboard from "./Components/Dashboard";
 import FileShow from "./Pages/Files/FileShow"
+import FileNew from "./Pages/Files/FileNew"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           {/* <Route exact path="/reset" element={<Reset/>}/> */}
           <Route exact path="/files" element={<Dashboard />}/>
           <Route exact path="files/:id" element={<FileShow />}/>
+          <Route exact path="files/file/new" element={<FileNew />}/>
         </Routes>
       </Router>
     </div>
