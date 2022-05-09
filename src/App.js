@@ -7,6 +7,7 @@ import Login from "./Components/Login";
 import Dashboard from "./Components/Dashboard";
 import FileShow from "./Pages/Files/FileShow"
 import FileNew from "./Pages/Files/FileNew"
+import FileEdit from "./Pages/Files/FileEdit"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/files" element={<Dashboard />}/>
           <Route exact path="files/:id" element={<FileShow />}/>
           <Route exact path="files/file/new" element={<FileNew />}/>
+          <Route exact path="files/file/edit" element={<FileEdit />}/>
         </Routes>
       </Router>
     </div>

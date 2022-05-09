@@ -14,13 +14,13 @@ const FilesListItem = ({ filesArr }) => {
         return (
           <li key={i} className="li-show">
             <div className="card-center">
-              <div className="file-mame">
+            
                 <img src={filesImage} className="file-pic" />
                 {file?.child_name} {file?.detailsl}
                 <Link to={`/files/${file?.id}`}>
                   <button className="showMe">Select</button>
                 </Link>
-              </div>
+           
               <br></br>
             </div>
           </li>

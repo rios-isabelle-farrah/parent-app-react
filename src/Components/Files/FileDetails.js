@@ -12,7 +12,7 @@ import { addMeetings } from "../../Store/Actions/meetingsActions";
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import LeftNav from "./LeftNav";
-// import CenterPanel from "./DetailComps/CenterPanel";
+ import CenterNav from "./CenterNav";
 // import RightPanel from "./DetailComps/RightPanel";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -26,22 +26,22 @@ function FileDetails() {
   let navigate = useNavigate();
 
 
-  // const deleteFile = async () => {
-  //   try {
-  //     await deleteFileByID(id);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+  const deleteFile = async () => {
+    try {
+      await deleteFileByID(id);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-  // const handleDelete = async () => {
-  //   try {
-  //     await deleteFile();
-  //    return navigate("/files");
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const handleDelete = async () => {
+    try {
+      await deleteFile();
+     return navigate("/files");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     const getAllMeetings = async () => {
@@ -151,6 +151,7 @@ console.log(documentDefinition,"docDef")
     return (
       <section className="file-section">
         <LeftNav id={id} handleReport={handleReport}/>
+        <CenterNav file={file} id={id} handleDelete={handleDelete}/>
 
       </section>
     );

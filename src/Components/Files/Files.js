@@ -1,21 +1,17 @@
-
-
-import React, { useEffect, useContext } from "react";
+import React, { useEffect} from "react";
 import "../../App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { addFiles } from "../../Store/Actions/filesActions";
 import { getAllFilesFN } from "../../util/networkRequest";
-//import { UserContext } from "../../Providers/UserProvider";
 import { Link} from "react-router-dom";
 import FilesListItem from "./FilesListItem";
-//import "../../Components/Style/Files/Files.css";
+import drawer from "../../Components/Images/Newfile.png"
+import "../Files/Files.css";
 
 const Files = () => {
   const entireState = useSelector((state) => state);
   const dispatch = useDispatch();
   const { files } = entireState;
-  // const user = useContext(UserContext);
-  //const history = useHistory();
   const filesArr = Object.values(files);
 
   useEffect(() => {
@@ -38,7 +34,7 @@ console.log(filesArr, "files array")
     <div className="files-div">
       <div className="button-newfile">
         <Link to={`/files/file/new`}>
-          <div className="circle-file"></div>
+          <img src={drawer} className="drawer"/>
         </Link>
       </div>
       <FilesListItem filesArr={filesArr} files={files} /> 

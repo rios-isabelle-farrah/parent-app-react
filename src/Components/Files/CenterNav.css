@@ -1,0 +1,57 @@
+.button-edit,.button-delete{
+    height: 80px;
+    width: 80px;
+    border: solid 6px orange;
+}
+
+
+.confile-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 500px;
+    margin: auto;
+    flex-direction: column;
+  }
+  
+  .confile {
+    width: 90%;
+    height: 50%;
+    transform: rotateY(10deg);
+    animation: rotateAnimation 5s cubic-bezier(0.1, 0.7, 1, 0.1);
+    animation-direction: normal;
+    animation-delay: 0.3s;
+    animation-timing-function: ease-out;
+    align-self: center;
+    z-index: -2;
+  }
+  
+  div.all-bs {
+    display: flex;
+    justify-content: space-between;
+    z-index:1;
+  }
+  
+  /* Delete & Edit Common */
+ 
+  
+  .button-edit, .button-delete{
+      height:200px;
+      width:200px;
+      background-color: orange;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  /* .modal-a{
+    border: red 2px solid;
+    width: 100%;
+  
+  } */
+  
