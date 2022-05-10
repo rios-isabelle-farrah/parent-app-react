@@ -87,16 +87,16 @@ function FileDetails() {
     let filer = entireState['files'][id]
 
     // let totalMeetings = 0;
-    let meetingHeadings = [["Meeting", "Date", "Details"]];
+    let meetings = [["Meeting", "Date", "Details"]];
     meetingsArr.forEach((meeting) => {
       let newDate = new Date(meeting.date);
       let year = newDate.getFullYear();
   
         if (year === 2022) {
-          meetingsArr.push([
+          meetings.push([
             `${meeting.category}`,
             `${newDate.toLocaleDateString()}`,
-            `$${meeting.details.toLocaleString()}`,
+            `$${meeting.details}`,
           ]);
           
         
@@ -155,13 +155,36 @@ function FileDetails() {
               headerRows: 1,
               widths: ["*", "30%", "20%"],
               height: "100",
-              body: meetingHeadings,
+              body: meetings,
               fontSize: 40,
             },
           },
-       
-     
 
+
+
+
+       
+          {
+            pageBreak: "before",
+            text: `${filer?.child_name} ${filer?.details} meetings for the year 2021 `,
+            bold: true,
+            fontSize: 20,
+            alignment: "center",
+            margin: [0, 20],
+          },
+          {
+            layout: "lightHorizontalLines",
+            table: {
+              headerRows: 1,
+              widths: ["*", "30%", "20%"],
+              height: "100",
+              body: meetings,
+              fontSize: 40,
+            },
+          },
+         
+          
+          
         ],
       };
 console.log(documentDefinition,"docDef")
