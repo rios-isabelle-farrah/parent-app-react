@@ -1,52 +1,22 @@
-// import React, { useState } from "react";
-
-// const LeftNav = ({ id, handleReport }) => {
-
-//   return (
-//     <>
- 
-//       <div className="left-nav">
-        
-//             <button onClick={handleReport} className="files-new-button">
-//               🗂 Generate Report    
-//             </button>
-       
-//       </div>
-   
-//         <div>
-//           <div className="left-nav-mb">
-
-
-         
-//               <div className="nav-meetings">
-//                 <button onClick={handleReport} className="files-new-button">
-//                   🗂 Generate Report    
-//                 </button>
-//               </div>
-      
-
-    
-//           </div>
-//         </div>
-      
-//     </>
-//   );
-// };
-
-// export default LeftNav;
 
 
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ModalNewMeetingForm from "../Modals/ModalNewMeetingForm.js";
-//import "./LeftNav.css";
+import "./LeftNav.css";
+
+import allmeetings from "../Images/allmeetings.png"
+import addmeetings from "../Images/addnotes.png"
+import meetingsreport from "../Images/meetingsreport.png"
+
 
 const LeftNav = ({ id, handleReport }) => {
   const [showEForm, setShowEForm] = useState(false);
   const [showComp, setShowComp] = useState(false);
 
   return (
+    <div className="red-cabinet">
     <>
       <img
         src="https://uxwing.com/wp-content/themes/uxwing/download/07-web-app-development/hamburger-menu.png"
@@ -56,7 +26,7 @@ const LeftNav = ({ id, handleReport }) => {
         alt="menu"
       />
 
-      <div className="left-nav">
+      <div className="left-red">
         {showEForm && (
           <ModalNewMeetingForm
             setShowEForm={setShowEForm}
@@ -64,28 +34,23 @@ const LeftNav = ({ id, handleReport }) => {
           />
         )}
         
-        <div className="chrome">
+        <div className="contain-file">
           <div
             className="nav-meetings"
             onClick={() => setShowEForm(!showEForm)}
           >
-            <p> ✚ Enter meeting</p>
+         <img src={addmeetings} className="addmeeting" />
           </div>
         </div>
 
      
 
-        <div className="chrome">
-          <div className="nav-meetings">
-            <button onClick={handleReport} className="files-new-button">
-              🗂 Generate Report    
-            </button>
-          </div>
-        </div>
-
-        <div className="chrome">
-          <div className="nav-meetings">
-            <Link to={`/files/${id}/meetings`}>📕 meeting Table</Link>
+        <div className="contain-file">
+          <div
+            className="nav-meetings"
+            onClick={handleReport}
+          >
+         <img src={meetingsreport} className="addmeeting" />
           </div>
         </div>
 
@@ -93,49 +58,18 @@ const LeftNav = ({ id, handleReport }) => {
 
 
 
+
+
+
+      
+        <div className="contain-file">
+       
+            <Link to={`/files/${id}/meetings`}><img src={allmeetings} className="addmeeting"/></Link>
+       
+        </div>
       </div>
-      {showComp && (
-        <div>
-          <div className="left-nav-mb">
-            {showEForm && (
-              <ModalNewMeetingForm
-                setShowEForm={setShowEForm}
-                showEForm={showEForm}
-              />
-            )}
-   
-            <div className="chrome">
-              <div
-                className="nav-meetings"
-                onClick={() => setShowEForm(!showEForm)}
-              >
-             
-                <p>✚ Enter meeting </p>
-               
-              </div>
-            </div>
-
-            
-
-            <div className="chrome">
-              <div className="nav-meetings">
-                <button onClick={handleReport} className="files-new-button">
-                  🗂 Generate Report    
-                </button>
-              </div>
-            </div>
-
-            <div className="chrome">
-              <div className="nav-meetings">
-                <Link to={`/files/${id}/meetings`}>📕 meeting Table</Link>
-              </div>
-            </div>
-
-            
-          </div>
-        </div>
-      )}
     </>
+    </div>
   );
 };
 

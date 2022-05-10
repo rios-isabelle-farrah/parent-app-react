@@ -68,3 +68,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+losing data on refresh
+https://stackoverflow.com/questions/62487168/loosing-component-data-on-page-refresh-in-react
+
+
+fetch all meetings from api local host 3333/files/id/meetings

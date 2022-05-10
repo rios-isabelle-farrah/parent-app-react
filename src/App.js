@@ -8,6 +8,7 @@ import Dashboard from "./Components/Dashboard";
 import FileShow from "./Pages/Files/FileShow"
 import FileNew from "./Pages/Files/FileNew"
 import FileEdit from "./Pages/Files/FileEdit"
+import MeetingsIndex from "./Pages/Meetings/MeetingsIndex"
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="files/:id" element={<FileShow />}/>
           <Route exact path="files/file/new" element={<FileNew />}/>
           <Route exact path="files/file/edit" element={<FileEdit />}/>
+          <Route exact path="files/:id/meetings" element={<MeetingsIndex />}/>
         </Routes>
       </Router>
     </div>

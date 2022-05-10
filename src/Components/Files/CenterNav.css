@@ -31,6 +31,8 @@
     display: flex;
     justify-content: space-between;
     z-index:1;
+    width: 60%;
+    align-self: center;
   }
   
   /* Delete & Edit Common */
@@ -54,4 +56,14 @@
     width: 100%;
   
   } */
-  
+  .concar-div{
+      border: green solid 8px;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+  img.concar{
+      height: 200px;
+      width: 200px;
+      align-self: center;
+  }

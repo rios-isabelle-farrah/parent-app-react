@@ -1,6 +1,6 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import { useState, useContext, useEffect } from "react";
+import { useState } from "react";
 import "./ModalNewMeetingForm.css";
 import { apiURL } from "../../util/apiURL";
 //import { UserContext } from "../../../Providers/UserProvider";
@@ -32,9 +32,14 @@ const ModalNewMeetingForm = ({ setShowEForm, showEForm }) => {
   const handleChange = (e) => {
     setMeeting({ ...meeting, [e.target.id]: e.target.value });
   };
+
+  
+
   const handleSelectChange = (e) => {
     setMeeting({ ...meeting, category: e.target.value });
+ 
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,7 +51,7 @@ const ModalNewMeetingForm = ({ setShowEForm, showEForm }) => {
     }
   };
 
-  const { category, details, date } = meeting;
+  const { details, date } = meeting;
   let newDate = new Date(date);
   newDate.setDate(newDate.getDate(date) + 1);
 
@@ -113,12 +118,12 @@ const ModalNewMeetingForm = ({ setShowEForm, showEForm }) => {
           </tbody>
         </table>
         <div className="meeting-buttons">
-          <button className="sub" type="submit"></button>
+          <button className="sb" type="submit">submit</button>
           <Link to={`/files/${id}`}>
             <button
               onClick={() => setShowEForm(!showEForm)}
-              className="button-can"
-            ></button>
+              className="button-cn"
+            >cancel</button>
           </Link>
         </div>
       </form>

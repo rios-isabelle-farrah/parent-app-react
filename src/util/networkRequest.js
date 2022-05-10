@@ -8,6 +8,7 @@ export const getAllFilesFN = async () => {
   let { data } = await axios.get(`${API}/files`);
   return data.payload;
 };
+
 export const updateFileById = async (id, updatedFile) => {
   if (id) {
     const editedFile = await axios.put(
@@ -17,12 +18,27 @@ export const updateFileById = async (id, updatedFile) => {
     return editedFile;
   }
 };
+
+export const getFileByID = async (id) => {
+  if (id) {
+    let { data } = await axios.get(`${API}/files/${id}`);
+    return data.payload;
+  }
+};
+
+
+
+
 export const deleteFileByID = async (id) => {
   if (id) {
     let { data } = await axios.delete(`${API}/files/${id}`);
     return data.payload;
   }
 };
+
+
+
+
 export const postFile = async (newFile) => {
   let { data } = await axios.post(`${API}/files`, newFile);
   return data.payload;

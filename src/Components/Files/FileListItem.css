@@ -138,7 +138,7 @@ body {
   }
   .list-files {
     width: 100%;
-    background-color: rgb(28, 26, 26);
+    /* background-color: rgb(28, 26, 26); */
     margin-top: 5%;
     padding-top: 3%;
   }
