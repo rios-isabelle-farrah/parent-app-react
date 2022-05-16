@@ -1,6 +1,19 @@
-.files{background-color: green;}
+/* .files{background-color: green;}
 
 .drawer{
     height: 600px;
     width: 600px;
+} */
+img.create,img.meetings{
+    width: 100%;
+    margin-top:5%;
 }
+.meetings{
+    width: 100%;
+}
+/* .files-div{
+    border:red solid 5px;
+} */
+
+
+/* For mobile phones: */

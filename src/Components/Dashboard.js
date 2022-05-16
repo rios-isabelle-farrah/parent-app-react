@@ -47,10 +47,10 @@
 //import { signInWithGoogle, signup, login } from "../Services/Firebase";
 
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import Files from "./Files/Files"
+import NewFiles from "./Files/NewFiles"
 import "./Dashboard.css";
 import { auth, db, logout } from "../Services/Firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
@@ -78,12 +78,7 @@ function Dashboard() {
   
   return (
 <div className="d-board">    
-<div className="dashboard">
-        <div className="blue">
-        
-          <Files/>
-        </div>
-       <div className="dashboard__container">
+<div className="dashboard__container">
         Logged in as
          <div>{name}</div>
          <div>{user?.email}</div>
@@ -91,7 +86,8 @@ function Dashboard() {
           Logout
          </button>
        </div>
-     </div></div>
+     <NewFiles/>
+     </div>
   );
 }
 export default Dashboard;

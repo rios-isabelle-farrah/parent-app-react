@@ -4,8 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { addFiles } from "../../Store/Actions/filesActions";
 import { getAllFilesFN } from "../../util/networkRequest";
 import { Link} from "react-router-dom";
-//import FilesListItem from "./FilesListItem";
+import FilesListItem from "./FilesListItem";
 import create from "../../Components/Images/createFile.png"
+import meetings from "../../Components/Images/meetings.png"
 import "../Files/Files.css";
 
 const Files = () => {
@@ -28,16 +29,22 @@ const Files = () => {
     fetchAllFiles();
   }, [dispatch]);
 console.log(filesArr, "files array")
- 
 
   return (
-    <div className="files-div">
-      <div className="button-newfile">
+    <div className="col-3 menu">
+      <div className="newfile">
         <Link to={`/files/file/new`}>
-          {/* <img src={create} className="create"/> */}
+          <img src={create} className="create"/>
         </Link>
+
+
+        {/* <Link to={`/files`}>
+        <img src={meetings} className="meetings"/>
+        </Link> */}
+      
       </div>
-      {/* <FilesListItem filesArr={filesArr} files={files} />  */}
+   
+      <FilesListItem filesArr={filesArr} files={files} /> 
     </div>
   );
 };

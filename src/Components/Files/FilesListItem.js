@@ -9,10 +9,10 @@ const FilesListItem = ({ filesArr }) => {
 
  return (
   <div className="list-files">
-    <ul className="ul-show">
+    <ul className="ul-select">
       {filesArr.map((file, i) => {
         return (
-          <li key={i} className="li-show">
+          <li key={i} className="li-select">
             <div className="card-center">
             
                 <img src={filesImage} className="file-pic" />

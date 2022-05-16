@@ -35,6 +35,9 @@ function FileNewForm() {
   const handleChange = (e) => {
     setFile({ ...file, [e.target.id]: e.target.value });
   };
+  const handleSelectChange = (e) => {
+    setFile({ ...file, details: e.target.value });
+  };
 
   const handleSubmit = async (e) => {
     //   debugger;
@@ -55,50 +58,58 @@ function FileNewForm() {
       <div className="divform">
         <div></div>
         <form onSubmit={handleSubmit} className="form-newfile">
-          <table className="table-newfile">
-            <tbody>
-              <tr className="row-driver">
-                <td>
-                  <label className="label-data" htmlFor="child_name">
-                    Name:
+       
+                  <label className="label-name" htmlFor="child_name">
+                    File Name:
                   </label>
-                </td>
-                <td className="child-name">
+              
                   <input
+                  className="input-class"
                     id="child_name"
                     type="text"
                     value={child_name}
                     onChange={handleChange}
                     required
                   />
-                </td>
-              </tr>
-              <tr className="row-make">
-                <td className="label-data">
-                  <label htmlFor="details">Details:</label>
-                </td>
+              
+              <br></br>
+               <div className="label-frame"> <label htmlFor="details" className="label-categories" for="multi-select">Select Category</label>
+               <Link to={`/files`}>
+              <button className="x-button">X</button>
+            </Link></div>  
+               
+                  <div className="select select-multiple">
+<select onChange={handleSelectChange} id="multi-select" multiple>
+                  {/* <option className="option-class" value="" defaultValue></option> */}
+                  <option className="option-class" name="meetings" value="meetings">
+                   Meetings
+                  </option>
+                  <option className="option-class" name="reimbursements" value="reimbursements">
+                 Reimbursements
+                  </option>
+                  <option className="option-class" name="behaviors" value="behaviors">
+                Behaviors
+                  </option>
+                  <option className="option-class" name="gut_health" value="gut_health">
+                Gut Health
+                  </option>
+                  <option className="option-class" name="milestones" value="milestones">
+                  Milestones
+                  </option>
 
-                <td className="details-input">
-                  <input
-                    value={details}
-                    type="text"
-                    onChange={handleChange}
-                    id="details"
-                    placeholder=""
-                    required
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                </select>
+                </div>
+                <span className="focus"></span>
+   
 
-          <div className="file-new-form-buttons">
+          <div className="submit">
             <button onClick={handleSubmit} className="submit" type="submit">
-              Submit
+             Create
             </button>
-            <Link to={`/files`}>
+
+            {/* <Link to={`/files`}>
               <button className="cancel">Cancel</button>
-            </Link>
+            </Link> */}
           </div>
         </form>
       </div>
