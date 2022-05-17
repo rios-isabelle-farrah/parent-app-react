@@ -4,6 +4,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ModalNewMeetingForm from "../Modals/ModalNewMeetingForm.js";
+// import ModalNewMeetingForm from "../Modals/ModalNewMeetingForm.js";
 import "./LeftNav.css";
 
 import allmeetings from "../Images/allmeetings.png"
@@ -11,9 +12,11 @@ import addmeetings from "../Images/addnotes.png"
 import meetingsreport from "../Images/meetingsreport.png"
 
 
+
 const LeftNav = ({ id, handleReport }) => {
   const [showEForm, setShowEForm] = useState(false);
-  const [showComp, setShowComp] = useState(false);
+
+  // const [showComp, setShowComp] = useState(false);
 
   return (
     <div className="red-cabinet">

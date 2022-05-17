@@ -1,8 +1,4 @@
-label.label-categories{
-    height: 900px;
-  margin-top:15%;
-    width: 100%;
-}
+
 select#multi-select{
     height:220px;
     width: 100%;
@@ -24,6 +20,7 @@ form.form-newfile{
 label.label-name{
     margin-bottom:20%;
     font-size: 20px;
+   
 }
 form{
     width: 100%;
@@ -31,22 +28,30 @@ form{
 .label-frame{
     width: 100%;
     background-color: beige;
-    height:50px;
-   padding-top:6%;
+    height:40px;
+   
+
+
    /* padding-left:6%; */
-   padding-bottom: 6%;
+  
 }
 a > button.x-button{
     border-radius: 50%;
     border:black 1px solid;
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 15px;
     height: 40px;
     width: 40px;
     text-decoration: rgb(46, 44, 44);
-    margin-bottom:38px;
-    position: relative;
-    z-index: 5;
+    right: 35px;
+  
+    /* position: relative;
+    z-index: 5; */
+}
+
+.label-categories{
+    /* width: 100%;
+    border:solid 5px pink; */
 }
 .submit{
     display: flex;

@@ -59,7 +59,9 @@ function FileNewForm() {
       <div className="divform">
         <div></div>
         <form onSubmit={handleSubmit} className="form-newfile">
-       
+        <Link to={`/files`}>
+              <button className="x-button">X</button>
+            </Link>
                   <label className="label-name" htmlFor="child_name">
                     File Name:
                   </label>
@@ -75,9 +77,10 @@ function FileNewForm() {
               
               <br></br>
                <div className="label-frame"> <label htmlFor="details" className="label-categories" for="multi-select">Select Category</label>
-               <Link to={`/files`}>
+               {/* <Link to={`/files`}>
               <button className="x-button">X</button>
-            </Link></div>  
+            </Link> */}
+            </div>  
                
                   <div className="select select-multiple">
 <select onChange={handleSelectChange} id="multi-select" multiple>
@@ -85,7 +88,7 @@ function FileNewForm() {
                   <option className="option-class" name="meetings" value="meetings">
                    Meetings
                   </option>
-                  <option className="option-class" name="reimbursements" value="reimbursements">
+                  {/* <option className="option-class" name="reimbursements" value="reimbursements">
                  Reimbursements
                   </option>
                   <option className="option-class" name="behaviors" value="behaviors">
@@ -96,7 +99,7 @@ function FileNewForm() {
                   </option>
                   <option className="option-class" name="milestones" value="milestones">
                   Milestones
-                  </option>
+                  </option> */}
 
                 </select>
                 </div>

@@ -30,7 +30,7 @@
     }
     .file-pic{
       
-      width:80%;
+      width:95%;
       height: 80%;
       left: 0px;
       top: 0px;
@@ -38,7 +38,13 @@
     }
     
     .showMe{
-  width: 70%;
+      position: relative;
+      z-index: 3;
+   
+    
+     left:5%;
+     color:black;
+     font-weight: bolder;
   
     }
     .li-select > a {
@@ -46,9 +52,9 @@
       position: relative;
       z-index: 3;
      bottom: 44%;
-     right: 3%;
+    
      width: 100%;
-     left:3%;
+     left:15%;
      color:black;
      font-weight: bolder;
    
