@@ -18,14 +18,7 @@ const LeftNav = ({ id, handleReport }) => {
   return (
     <div className="red-cabinet">
     <>
-      <img
-        src="https://uxwing.com/wp-content/themes/uxwing/download/07-web-app-development/hamburger-menu.png"
-        style={{ height: "40px", width: "40px" }}
-        className="hamb"
-        onClick={() => setShowComp(!showComp)}
-        alt="menu"
-      />
-
+     
       <div className="left-red">
         {showEForm && (
           <ModalNewMeetingForm

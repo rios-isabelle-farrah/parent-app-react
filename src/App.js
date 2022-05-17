@@ -9,6 +9,7 @@ import FileShow from "./Pages/Files/FileShow"
 import FileNew from "./Pages/Files/FileNew"
 import FileEdit from "./Pages/Files/FileEdit"
 import MeetingsIndex from "./Pages/Meetings/MeetingsIndex"
+import MeetingsSection from "../src/Components/Meetings/MeetingsSection.js"
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="files/file/new" element={<FileNew />}/>
           <Route exact path="files/file/edit" element={<FileEdit />}/>
           <Route exact path="files/:id/meetings" element={<MeetingsIndex />}/>
+          <Route exact path="files/meetingshow" element={<MeetingsSection/>}/>
         </Routes>
       </Router>
     </div>

@@ -4,12 +4,17 @@
     height: 600px;
     width: 600px;
 } */
+* {
+    margin: 0;
+    padding: 0;
+  }
 img.create,img.meetings{
+  
     width: 100%;
     margin-top:5%;
 }
 .meetings{
-    width: 100%;
+    width: 90%;
 }
 /* .files-div{
     border:red solid 5px;
@@ -17,3 +22,7 @@ img.create,img.meetings{
 
 
 /* For mobile phones: */
+div.newfile{
+    background-color: yellow;
+    width: 100%;
+}

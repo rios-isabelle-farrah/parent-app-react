@@ -1,8 +1,10 @@
 import React, { useEffect} from "react";
-import { useParams} from "react-router-dom";
+import { useParams, useNavigate} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addFiles } from "../../Store/Actions/filesActions";
 import { getAllFilesFN } from "../../util/networkRequest";
+import { deleteFileByID} from "../../util/networkRequest";
+import "./FileDetails.css"
 // import { UserContext } from "../../Providers/UserProvider";
 import {
   //deleteFileByID,
@@ -14,7 +16,7 @@ import { addMeetings } from "../../Store/Actions/meetingsActions";
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import LeftNav from "./LeftNav";
- //import CenterNav from "./CenterNav";
+ import CenterNav from "./CenterNav";
 // import RightPanel from "./DetailComps/RightPanel";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -30,25 +32,25 @@ function FileDetails() {
   const meetingsArr = Object.values(meetings);
   console.log(meetingsArr,('meetings'))
  
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
 
 
-  // const deleteFile = async () => {
-  //   try {
-  //     await deleteFileByID(id);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+  const deleteFile = async () => {
+    try {
+      await deleteFileByID(id);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-  // const handleDelete = async () => {
-  //   try {
-  //     await deleteFile();
-  //    return navigate("/files");
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const handleDelete = async () => {
+    try {
+      await deleteFile();
+     return navigate("/files");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     const fetchAllFiles = async () => {
@@ -197,7 +199,7 @@ console.log(documentDefinition,"docDef")
     return (
       <section className="file-section">
         <LeftNav id={id} handleReport={handleReport}/>
-        {/* <CenterNav file={file} id={id} handleDelete={handleDelete}/> */}
+         <CenterNav file={filer} id={id} handleDelete={handleDelete}/> 
 
       </section>
     );

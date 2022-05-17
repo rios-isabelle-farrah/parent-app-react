@@ -38,13 +38,16 @@
 }
 
  */
- .App {
-  margin: 20px;
-  background-color: yellow;
-height: 100%;
+ * {
+  margin: 0;
+  padding: 0;
 }
 
-.app-heading{
-  color:blue;
-  font-size: larger;
+.app {
+  /* margin: 20px; */
+border: lime solid 1px;
+/* height: 100%; */
+
+width:100%;
 }
+

@@ -3,7 +3,7 @@ import "./CenterNav.css";
 import filePic from "../Images/file.png"
 const CenterNav = ({ file, id, handleDelete }) => {
   return (
-    <div className="concar-div">
+    <div className="mainFile-div">
       <img
         className="concar"
         src={filePic}

@@ -33,7 +33,7 @@ form{
     background-color: beige;
     height:50px;
    padding-top:6%;
-   padding-left:6%;
+   /* padding-left:6%; */
    padding-bottom: 6%;
 }
 a > button.x-button{

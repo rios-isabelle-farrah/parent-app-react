@@ -104,7 +104,7 @@ const ModalNewMeetingForm = ({ setShowEForm, showEForm }) => {
                 <label htmlFor="details">Details:</label>
               </td>
               <td className="data-td">
-                <input
+                <textarea
                   id="details"
                   type="text"
                   value={details}

@@ -13,16 +13,18 @@ const FilesListItem = ({ filesArr }) => {
       {filesArr.map((file, i) => {
         return (
           <li key={i} className="li-select">
-            <div className="card-center">
+ 
             
                 <img src={filesImage} className="file-pic" />
-                {file?.child_name} {file?.detailsl}
+   
                 <Link to={`/files/${file?.id}`}>
-                  <button className="showMe">Select</button>
+                  {file?.child_name}
+                  <br></br>
+                  <button className="showMe"> {file?.details} </button>
                 </Link>
            
               <br></br>
-            </div>
+    
           </li>
         );
       })}

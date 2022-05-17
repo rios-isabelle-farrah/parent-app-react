@@ -1,6 +1,7 @@
 import React from "react";
 import NewFiles from "../../Components/Files/NewFiles";
-// import "../../Components/Style/Files/FilesIndex.css";
+ import "./FilesIndex.css";
+
 
 const FilesIndex = () => {
   return (

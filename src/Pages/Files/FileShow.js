@@ -1,8 +1,8 @@
 import FileDetails from "../../Components/Files/FileDetails";
-
+import "./FileShow.css"
 function FileShow() {
   return (
-    <div>
+    <div className="show-page">
       <FileDetails />
     </div>
   );

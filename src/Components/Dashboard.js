@@ -78,16 +78,16 @@ function Dashboard() {
   
   return (
 <div className="d-board">    
-<div className="dashboard__container">
+
         Logged in as
          <div>{name}</div>
          <div>{user?.email}</div>
          <button className="dashboard__btn" onClick={logout}>
           Logout
          </button>
+         <NewFiles/>
        </div>
-     <NewFiles/>
-     </div>
+
   );
 }
 export default Dashboard;

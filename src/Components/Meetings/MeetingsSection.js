@@ -1,12 +1,12 @@
 import React, { useEffect} from "react";
 import "../../App.css";
 import { useSelector, useDispatch } from "react-redux";
-import { addFiles } from "../../Store/Actions/filesActions";
+ import { addFiles } from "../../Store/Actions/filesActions";
 import { getAllFilesFN } from "../../util/networkRequest";
 import { Link} from "react-router-dom";
-import FilesListItem from "./FilesListItem";
-import create from "../../Components/Images/createFile.png"
-import meetings from "../../Components/Images/meetings.png"
+import MeetSectionList from "../Meetings/MeetSectionList";
+// import create from "../../Components/Images/createFile.png"
+// import meetings from "../../Components/Images/meetings.png"
 import "../Files/Files.css";
 
 const Files = () => {
@@ -33,9 +33,9 @@ console.log(filesArr, "files array")
   return (
  
       <div className="newfile">
-        <Link to={`/files/file/new`}>
+        {/* <Link to={`/files/file/new`}>
           <img src={create} className="create"/>
-        </Link>
+        </Link> */}
 
 
         {/* <Link to={`/files`}>
@@ -44,7 +44,7 @@ console.log(filesArr, "files array")
       
  
    
-      <FilesListItem filesArr={filesArr} files={files} /> 
+      <MeetSectionList filesArr={filesArr} files={files} /> 
     </div>
   );
 };
