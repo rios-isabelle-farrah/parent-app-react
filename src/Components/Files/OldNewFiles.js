@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
 import "../../App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { addFiles } from "../../Store/Actions/filesActions";
 import { getAllFilesFN } from "../../util/networkRequest";
-import { Link } from "react-router-dom";
-import FilesListItem from "./FilesListItem";
+import { Link} from "react-router-dom";
+import FilesListItem from "./OldFilesListItem";
+import create from "../../Components/Images/createFile.png"
+import meetings from "../../Components/Images/meetings.png"
 import "../Files/Files.css";
 
 const Files = () => {
@@ -16,30 +18,33 @@ const Files = () => {
   useEffect(() => {
     const fetchAllFiles = async () => {
       try {
-        const res = await getAllFilesFN();
-        dispatch(addFiles(res));
+       
+          const res = await getAllFilesFN();
+          dispatch(addFiles(res));
+        
       } catch (error) {
         console.log(error);
       }
     };
     fetchAllFiles();
   }, [dispatch]);
-  console.log(filesArr, "files array");
+console.log(filesArr, "files array")
 
   return (
-    <div className="cabinet-files">
-      <div className="grey-header">
-        <Link to={`/files/file/new`}>Create New Files +</Link>
-      </div>
+ 
+      <div className="newfile">
+        <Link to={`/files/file/new`}>
+          <img src={create} className="create"/>
+        </Link>
 
-      {/* <Link to={`/files`}>
+
+        {/* <Link to={`/files`}>
         <img src={meetings} className="meetings"/>
         </Link> */}
-<div className="list-item-div">
-
-
+      
+ 
+   
       <FilesListItem filesArr={filesArr} files={files} /> 
-      </div>
     </div>
   );
 };

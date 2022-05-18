@@ -1,4 +1,36 @@
-.nav-div{
-    border: orange 5px solid;
-    height: 500px;
+.nav-component{
+    height: 70px;
+    width: 100%;
+    background-color: white;
+    /* border:orange solid 8px; */
+    bottom:0;
+    position:absolute;
+    z-index:7;
+padding-top:5%;
 }
+.nav-div{
+    display: flex;
+    justify-content: space-around;
+
+}
+.nav-lis{
+    display: flex;
+    flex-direction: column;
+justify-content: center;
+/* border:red solid 1px; */
+
+}
+.icons{
+    height: 30px;
+    width: 30px;
+}
+
+.nav-lis > img {
+align-self: center;
+
+}
+
+.nav-lis > a {
+    text-decoration: none;
+    
+    }

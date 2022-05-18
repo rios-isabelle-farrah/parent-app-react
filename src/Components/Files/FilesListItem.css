@@ -1,0 +1,93 @@
+.cabinet-list{
+/* background-color: grey; */
+width: 90%;
+align-self: center;
+margin-top:30px;
+/* border: rgb(66, 64, 64) 5px solid;
+outline:grey solid 6px; */
+}
+.ul-cabinet{
+    align-self: center;
+list-style: none;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+padding-top:7px;
+padding-bottom: 7px;
+overflow-y: scroll;
+}
+
+.li-files{
+    /* border: brown solid 1px; */
+    width: 45%;
+
+    background-image: url("../Images/greydrawer.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 40px;
+    margin:2px;
+    text-align: center;
+    padding-top:17%;
+    margin-bottom: 6px;
+  
+
+
+
+}
+.li-files > a{
+    display: flex;
+    flex-direction: column;
+    
+    align-content: center;
+
+}
+
+.li-files > a > button{
+    align-self:center;
+    background-color: rgb(255, 206, 214);
+
+}
+/* unvisited link */
+.li-files > a:link {
+    text-decoration: none;
+    color: #FFF1E6;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 29px;
+  }
+  
+  /* visited link */
+  .li-files > a:visited {
+    color:#FFF1E6;
+    text-decoration: none;
+  }
+  
+  /* mouse over link */
+  .li-files > a:hover {
+    color: #FFF1E6;
+    text-decoration: none;
+  }
+  
+  /* selected link */
+  .li-files > a:active {
+    color: #FFF1E6;
+    text-decoration: none;
+  }
+
+
+
+
+
+.drawer{
+    height: 60px;
+    width: 100%;
+}
+
+
+
+.details-route{
+    width:70%;
+
+}

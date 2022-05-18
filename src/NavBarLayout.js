@@ -1,10 +1,13 @@
 import { Outlet } from 'react-router-dom';
 import NavBar from "./Components/NavBar"
+import "./NavBarLayout"
 
 const NavBarLayout = () => (
   <>
-    <NavBar />
     <Outlet />
+   <div className="nav-component">
+   <NavBar />
+       </div> 
   </>
 );
 export default NavBarLayout;

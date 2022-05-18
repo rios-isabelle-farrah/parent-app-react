@@ -1,35 +1,61 @@
-/* .files{background-color: green;}
+.cabinet-files{
+    height:auto!important;
+    min-height:88vh;
+    background-color: #4F5A60; 
+    display: flex;
+    flex-direction: column;
 
-.drawer{
-    height: 600px;
-    width: 600px;
-} */
-* {
-    margin: 0;
-    padding: 0;
-  }
-img.create{
-  
-    width: 40%;
-    margin-top:5%;
-    text-align: center;
+    
 }
-.meetings{
-    width: 90%;
-}
-/* .files-div{
-    border:red solid 5px;
-} */
 
-
-/* For mobile phones: */
-div.newfile{
-    background-color: yellow;
+.grey-header{
+    background-color: #4F5A60;
+    height: 100px;
     width: 100%;
-    margin-top:20%;
+    display: flex;
+    justify-content: center;
+    color: #FFF1E6;
+    align-items: center;
+    position: absolute;
   
 }
 
-div.newfile > a {
-    margin-left: 30%;
-}
+/* unvisited link */
+div.grey-header > a:link {
+    text-decoration: none;
+    color: #FFF1E6;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 29px;
+  }
+  
+  /* visited link */
+  div.grey-header > a:visited {
+    color:#FFF1E6;
+    text-decoration: none;
+  }
+  
+  /* mouse over link */
+  div.grey-header > a:hover {
+    color: #FFF1E6;
+    text-decoration: none;
+  }
+  
+  /* selected link */
+  div.grey-header > a:active {
+    color: #FFF1E6;
+    text-decoration: none;
+  }
+  .list-item-div{
+      height:493px;
+      width: 100%;
+      background-color: #FFF1E6;
+      border-radius: 15px;
+      overflow: scroll;
+      position: absolute;
+      align-self: center;
+      margin-top:30%;
+      z-index:1;
+      display: flex;
+      flex-direction: column;
+  }

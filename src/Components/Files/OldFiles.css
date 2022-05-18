@@ -1,0 +1,35 @@
+/* .files{background-color: green;}
+
+.drawer{
+    height: 600px;
+    width: 600px;
+} */
+* {
+    margin: 0;
+    padding: 0;
+  }
+img.create{
+  
+    width: 40%;
+    margin-top:5%;
+    text-align: center;
+}
+.meetings{
+    width: 90%;
+}
+/* .files-div{
+    border:red solid 5px;
+} */
+
+
+/* For mobile phones: */
+div.newfile{
+    background-color: yellow;
+    width: 100%;
+    margin-top:20%;
+  
+}
+
+div.newfile > a {
+    margin-left: 30%;
+}
