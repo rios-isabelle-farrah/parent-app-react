@@ -6,9 +6,15 @@
   .d-board{
     background-color: pink;
     width: 100%;
+   
 
   }
   .dc{
     width: 100%;
     border: blue solid 9px;
+  }
+  .log-out{
+    /* border:black solid 20px; */
+    height: 190px;
+   
   }

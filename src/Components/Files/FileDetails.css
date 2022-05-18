@@ -8,4 +8,6 @@ section.file-section{
     display: flex;
    
     background-color: grey;
+    height: 100px;
+    border:purple solid 3px;
 }

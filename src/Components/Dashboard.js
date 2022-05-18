@@ -54,6 +54,7 @@ import NewFiles from "./Files/NewFiles"
 import "./Dashboard.css";
 import { auth, db, logout } from "../Services/Firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
+import NavBar from "./NavBar.js"
 function Dashboard() {
   const [user, loading] = useAuthState(auth);
   const [name, setName] = useState("");
@@ -79,13 +80,15 @@ function Dashboard() {
   return (
 <div className="d-board">    
 
-        Logged in as
+    <div className="log-out">   Logged in as
          <div>{name}</div>
          <div>{user?.email}</div>
          <button className="dashboard__btn" onClick={logout}>
           Logout
          </button>
+         </div> 
          <NewFiles/>
+         <NavBar/>
        </div>
 
   );

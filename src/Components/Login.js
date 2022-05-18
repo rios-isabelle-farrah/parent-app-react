@@ -31,11 +31,12 @@ function Login() {
         <div className="small-font">
         It allows you to organize and store important data like special education meetings right from your phone. 
         </div>
+        <button className="sign-in" onClick={signInWithGoogle}>
+   Continue with Google Sign In
+      </button>
       </div>
 
-      <button className="sign-in" onClick={signInWithGoogle}>
-        login
-      </button>
+   
     </div>
   );
 }
