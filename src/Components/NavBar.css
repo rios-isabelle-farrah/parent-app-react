@@ -4,7 +4,7 @@
     background-color: white;
     /* border:orange solid 8px; */
     bottom:0;
-    position:absolute;
+    position:fixed;
     z-index:7;
 padding-top:5%;
 }

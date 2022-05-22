@@ -3,8 +3,7 @@ import "./FileNew.css";
 
 function FileNew() {
   return (
-    <div className="file-new-main">
-      File New Form
+    <div className="new-main">
       <FileNewForm />
     </div>
   );

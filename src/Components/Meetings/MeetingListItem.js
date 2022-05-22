@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-//import "../Style/Meetings/MeetingListItem.css";
+import "./MeetingListItem.css";
 
 const MeetingListItem = ({ meeting }) => {
   const { id, file_id, category, details, date } = meeting;
@@ -8,10 +8,10 @@ const MeetingListItem = ({ meeting }) => {
   newDate.setDate(newDate.getDate(date) + 1);
 
   return (
-    <tr className="row-penses">
+    <tr>
       <td>{newDate.toLocaleDateString()}</td>
       <td>{category}</td>
-      <td>{details}</td>
+      <td className="td-details">{details}</td>
      
       <td>
         <Link to={`/file/${file_id}/meetings/${id}`}>

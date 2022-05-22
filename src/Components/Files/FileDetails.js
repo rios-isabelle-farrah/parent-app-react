@@ -15,8 +15,8 @@ import { addMeetings } from "../../Store/Actions/meetingsActions";
 
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
-// import LeftNav from "./LeftNav";
-//  import CenterNav from "./CenterNav";
+// import LeftNav from "./OldLeftNav";
+ import CenterNav from "./CenterNav";
 // import RightPanel from "./DetailComps/RightPanel";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -198,8 +198,8 @@ console.log(documentDefinition,"docDef")
 
     return (
       <section className="file-section">
-        {/* <LeftNav id={id} handleReport={handleReport}/>
-         <CenterNav file={filer} id={id} handleDelete={handleDelete}/>  */}
+      
+         <CenterNav handleReport={handleReport} file={filer} id={id} handleDelete={handleDelete}/> 
 
       </section>
     );

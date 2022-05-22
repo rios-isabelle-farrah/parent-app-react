@@ -55,13 +55,15 @@ function FileNewForm() {
   const { child_name, details } = file;
 
   return (
-    <div className="bckground">
-      <div className="divform">
-        <div></div>
+    <div className="background">
+      <div className="backgroundA">
         <form onSubmit={handleSubmit} className="form-newfile">
+        <div className="x">
+
         <Link to={`/files`}>
               <button className="x-button">X</button>
             </Link>
+          </div>
                   <label className="label-name" htmlFor="child_name">
                     File Name:
                   </label>
@@ -106,9 +108,9 @@ function FileNewForm() {
                 <span className="focus"></span>
    
 
-          <div className="submit">
+          <div className="submit-div">
             <button onClick={handleSubmit} className="submit" type="submit">
-             Create
+ 
             </button>
 
             {/* <Link to={`/files`}>

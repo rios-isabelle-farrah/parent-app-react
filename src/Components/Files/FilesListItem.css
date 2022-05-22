@@ -24,13 +24,14 @@ overflow-y: scroll;
 
     background-image: url("../Images/greydrawer.png");
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
-    height: 40px;
+    height: 50px;
     margin:2px;
     text-align: center;
-    padding-top:17%;
+    padding-top:18%;
     margin-bottom: 6px;
+    position:relative;
   
 
 
@@ -46,7 +47,13 @@ overflow-y: scroll;
 
 .li-files > a > button{
     align-self:center;
-    background-color: rgb(255, 206, 214);
+    background-color: rgb(42, 37, 37);
+    position:absolute;
+    overflow: scroll;
+    height: 46%;
+    bottom:9px;
+    color:white;
+    font-size: 9px;
 
 }
 /* unvisited link */

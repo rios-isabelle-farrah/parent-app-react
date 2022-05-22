@@ -6,7 +6,7 @@ import { getAllMeetingsFN } from "../../util/networkRequest";
 import { useDispatch, useSelector } from "react-redux";
 import { addMeetings } from "../../Store/Actions/meetingsActions";
 //import { UserContext } from "../../Providers/UserProvider";
-//import "../Style/Meetings/Meetings.css";
+import "./Meetings.css";
 
 const Meetings = () => {
 //   const user = useContext(UserContext);
@@ -50,11 +50,12 @@ const Meetings = () => {
           <tr className="head-row">
             <th className="head-date">Date</th>
             <th className="head-type">Meeting Type</th>
-            <th className="head-amount">Amount</th>
-            <th className="head-edit">Show</th>
+            <th className="head-details">Details</th>
+            {/* <th className="head-edit">Show</th> */}
           </tr>
         </thead>
-        <tbody>
+        <tbody className="t-body">
+     
           {meetingArr.map((meeting, i) => {
             return <MeetingListItem key={i} meeting={meeting} />;
           })}

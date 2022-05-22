@@ -2,3 +2,7 @@
     margin: 0;
     padding: 0;
   }
+  .new-main{
+    height: 600px;
+    border:blue solid 2px;
+  }

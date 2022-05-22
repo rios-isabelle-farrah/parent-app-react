@@ -1,0 +1,18 @@
+table {
+    table-layout: fixed;
+    width: 98%;
+    /* border: 1px solid red; */
+  }
+  
+  td {
+    /* border: 1px solid blue; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  td {
+    /* border: 1px solid blue; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }

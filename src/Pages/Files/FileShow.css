@@ -6,7 +6,8 @@
 
 .show-page{
     width:100%;
-    border:orange solid 2px;
+    height: 100%;
+    /* border:orange solid 2px; */
    
 
 }
