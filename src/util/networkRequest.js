@@ -64,3 +64,10 @@ export const updateMeetingById = async (id, meeting_id, updatedMeeting) => {
 };
 
 
+
+export const deleteMeetingByID = async (id,meeting_id) => {
+  if (id) {
+    let { data } = await axios.delete(`${API}/files/${id}/meetings/${meeting_id}`);
+    return data.payload;
+  }
+};

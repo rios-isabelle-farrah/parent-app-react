@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect} from "react";
-import MeetingListItem from "./MeetingListItem";
+import MeetingsListItem from "./MeetingsListItem";
 import { Link, useParams} from "react-router-dom";
 import { getAllMeetingsFN } from "../../util/networkRequest";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,11 +11,11 @@ import "./Meetings.css";
 const Meetings = () => {
 //   const user = useContext(UserContext);
 //   let navigate= useHistory();
+const dispatch = useDispatch();
   const entireState = useSelector((state) => state);
-  const dispatch = useDispatch();
   const { files, meetings } = entireState;
   const { id } = useParams();
-  const meetingArr = Object.values(meetings);
+  const meetingsArr = Object.values(meetings);
 
   useEffect(() => {
     const getAllMeetings = async () => {
@@ -29,6 +29,7 @@ const Meetings = () => {
       }
     };
     getAllMeetings();
+
   }, [dispatch, id]);
 
 //   useEffect(() => {
@@ -36,14 +37,14 @@ const Meetings = () => {
 //       history.push("/");
 //     }
 //   }, [user, history]);
-
+console.log(meetingsArr)
   return (
     <div className="main-e-div">
       <h2>
         {files[id]?.child_name} {files[id]?.details} Meetings
       </h2>
-      <Link to={`/files/${id}/meetings/meeting/new`}>
-        <button className="meeting-new-button">Add New Meeting</button>
+      <Link to={`/files/${id}`}>
+        <button className="meeting-new-button">go back</button>
       </Link>
       <table className="meetings-main-table">
         <thead>
@@ -56,8 +57,8 @@ const Meetings = () => {
         </thead>
         <tbody className="t-body">
      
-          {meetingArr.map((meeting, i) => {
-            return <MeetingListItem key={i} meeting={meeting} />;
+          {meetingsArr.map((meeting, i) => {
+            return <MeetingsListItem key={i} meeting={meeting} />;
           })}
         </tbody>
       </table>

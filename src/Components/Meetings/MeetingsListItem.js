@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
-import "../Style/Expenses/ExpenseListItem.css";
+//import "./MeetingListItem.css";
 
-const MeetingSectionList = ({ meeting }) => {
+const MeetingsListItem = ({ meeting }) => {
   const { id, file_id, category, details, date } = meeting;
 
   let newDate = new Date(date);
   newDate.setDate(newDate.getDate(date) + 1);
 
   return (
-    <tr className="row-penses">
+    <tr>
       <td>{newDate.toLocaleDateString()}</td>
       <td>{category}</td>
-      <td>{details.toLocaleString()}</td>
+      <td className="td-details">{details}</td>
+     
       <td>
         <Link to={`/files/${file_id}/meetings/${id}`}>
           <button className="edit-button">More</button>
@@ -21,4 +22,4 @@ const MeetingSectionList = ({ meeting }) => {
   );
 };
 
-export default MeetingSectionList;
+export default MeetingsListItem;
