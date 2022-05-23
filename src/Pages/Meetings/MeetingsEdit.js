@@ -6,21 +6,22 @@ import { apiURL } from "../../util/apiURL";
 //import { UserContext } from "../../../Providers/UserProvider";
 
 const API = apiURL();
-const FileEditForm = () => {
+const MeetingsEdit = () => {
 //   const user = useContext(UserContext);
   let navigate = useNavigate();
-  const { id} = useParams();
-  const [file, setFile] = useState({
-child_name: "",
-   details: ""
+  const { id,meeting_id } = useParams();
+  const [meeting, setMeeting] = useState({
+   category: "",
+   details: "",
+    date: new Date(),
   });
 
-  const updateFile = async (updatedFile) => {
+  const updateMeeting = async (updatedMeeting) => {
     try {
     
         await axios.put(
-          `${API}/files/${id}`,
-          updatedFile
+          `${API}/files/${id}/meetings/${meeting_id}`,
+          updatedMeeting
         );
       
     } catch (error) {
@@ -29,30 +30,30 @@ child_name: "",
   };
 
   const handleChange = (e) => {
-    setFile({ ...file, [e.target.id]: e.target.value });
+    setMeeting({ ...meeting, [e.target.id]: e.target.value });
   };
 
   
 
-  // const handleSelectChange = (e) => {
-  //   setFile({ ...file, details: e.target.value });
+  const handleSelectChange = (e) => {
+    setMeeting({ ...meeting, category: e.target.value });
  
-  // };
+  };
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await updateFile(file);
-     return navigate(`/files`);
+      await updateMeeting(meeting);
+     return navigate(`/files/${id}/meetings`);
     } catch (error) {
       console.log(error);
     }
   };
 
-  const { child_name, details} = file;
-  // let newDate = new Date(date);
-  // newDate.setDate(newDate.getDate(date) + 1);
+  const { category, details, date } = meeting;
+  let newDate = new Date(date);
+  newDate.setDate(newDate.getDate(date) + 1);
 
 //   useEffect(() => {
 //     if (!user) {
@@ -66,19 +67,36 @@ child_name: "",
      
         <table className="meeting-table-one">
           <tbody>
-          
-          <tr>
+            <tr>
               <td className="data-td">
-                <label htmlFor="child_name">Name:</label>
+                <label htmlFor="date">Date:</label>
               </td>
               <td className="data-td">
                 <input
-                  id="child_name"
-                  type="text"
-                  value={child_name}
+                  value={date}
+                  // value="1111-11-11"
+                  type="date"
                   onChange={handleChange}
-                  required
+                  id="date"
+                  placeholder="Enter date"
                 />
+              </td>
+            </tr>
+            <tr>
+              <td className="data-td">
+                <label> category:</label>
+              </td>
+              <td className="data-td">
+                <select onChange={handleSelectChange}>
+                  <option value="" defaultValue></option>
+                  <option name="iep" value="iep">
+                    iep
+                  </option>
+                  <option name="turning_five" value="turning_five">
+                   turning five
+                  </option>
+      
+                </select>
               </td>
             </tr>
             <tr>
@@ -86,7 +104,7 @@ child_name: "",
                 <label htmlFor="details">Details:</label>
               </td>
               <td className="data-td">
-                <input
+                <textarea
                   id="details"
                   type="text"
                   value={details}
@@ -95,16 +113,13 @@ child_name: "",
                 />
               </td>
             </tr>
-          
-          
 
-            
     
           </tbody>
         </table>
         <div className="meeting-buttons">
           <button className="sb" type="submit">submit</button>
-          <Link to={`/files`}>
+          <Link to={`/files/${id}/meetings`}>
               <button className="new-can">Cancel</button>
             </Link>
         </div>
@@ -113,4 +128,4 @@ child_name: "",
   );
 };
 
-export default FileEditForm;
+export default MeetingsEdit;

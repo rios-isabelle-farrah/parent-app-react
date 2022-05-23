@@ -105,9 +105,9 @@ console.log(meet,"meeet")
           <Link to={`/files/${id}/meetings`}>
             <button>BACK</button>
           </Link>
-          {/* <Link to={`/files/${id}/meetings/${meeting_id}/edit`}>
+          <Link to={`/files/${id}/meetings/${meeting_id}/edit`}>
             <button>EDIT</button>
-          </Link> */}
+          </Link>
         </div>
       </div>
     );
