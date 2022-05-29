@@ -3,8 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import "./ModalNewMeetingForm.css";
 import { apiURL } from "../../util/apiURL";
-import postsubmit from "../Images/postsubmit.PNG"
-import postcancel from "../Images/postcancel.png"
+
 //import { UserContext } from "../../../Providers/UserProvider";
 
 const API = apiURL();
@@ -68,7 +67,7 @@ const ModalNewMeetingForm = ({ setShowEForm, showEForm }) => {
       <form className="form-meeting-modal" onSubmit={handleSubmit}>
      
        
-                <label htmlFor="date"></label>
+                <label></label>
        
                 <input className="date"
                   value={date}

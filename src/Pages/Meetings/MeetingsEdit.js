@@ -66,7 +66,7 @@ const MeetingsEdit = () => {
     <div className="main-left-div">
       <form className="form-meeting-modal" onSubmit={handleSubmit}>
      
-      <label htmlFor="date"></label>
+      <label></label>
        
        <input className="date"
          value={date}
@@ -78,8 +78,8 @@ const MeetingsEdit = () => {
        />
    
      <br></br>
-   <label htmlFor="category"></label>
-       <select onChange={handleSelectChange}  className="category" >
+   <label ></label>
+       <select onChange={handleSelectChange}  className="category" id={category} >
          <option value="select category" defaultValue>select category</option>
          <option name="iep" value="iep">
            iep

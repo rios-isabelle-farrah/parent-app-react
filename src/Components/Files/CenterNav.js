@@ -34,19 +34,19 @@ const CenterNav = ({ file, id, handleDelete, handleReport }) => {
             className="nav-meetings"
             onClick={() => setShowEForm(!showEForm)}
           >
-            <img src={addmeetings} className="addmeeting" />
+            <img src={addmeetings} className="addmeeting" alt="meetings" />
           </div>
         </div>
 
         <div className="contain-file">
           <Link to={`/files/${id}/meetings`}>
-            <img src={allmeetings} className="addmeeting" />
+            <img src={allmeetings} className="addmeeting" alt="meetings" />
           </Link>
         </div>
 
         <div className="contain-file">
           <div className="nav-meetings" onClick={handleReport}>
-            <img src={meetingsreport} className="addmeeting" />
+            <img src={meetingsreport} className="addmeeting" alt="meetings" />
           </div>
         </div>
       </div>

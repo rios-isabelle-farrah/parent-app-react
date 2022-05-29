@@ -12,7 +12,7 @@ function FileEditForm() {
   let navigate = useNavigate();
   const files = useSelector((state) => state.files);
   const dispatch = useDispatch();
-  const file = files[id];
+  // const file = files[id];
 
   const [fileInput, setFileInput] = useState({
     id:id,
@@ -29,7 +29,7 @@ function FileEditForm() {
         dispatch(addFile(editedFile));
       }
     } catch (error) {
-      console.log(error);
+      console.log(error,files);
     }
   };
 
@@ -65,7 +65,7 @@ console.log(fileInput,"inputfileee3eiouhuh")
     <div className="wrap-edit">
 
       <form className="edit-form-a" onSubmit={handleSubmit}>
-        <label htmlFor="filer">Cabinet Name:</label>
+        <label>Cabinet Name:</label>
         <input
           value={child_name}
           type="text"

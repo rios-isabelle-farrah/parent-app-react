@@ -52,7 +52,7 @@ function FileNewForm() {
     }
   };
 
-  const { child_name, details } = file;
+  const { child_name} = file;
 
   return (
     <div className="background">
@@ -64,7 +64,7 @@ function FileNewForm() {
               <button className="x-button">X</button>
             </Link>
           </div>
-                  <label className="label-name" htmlFor="child_name">
+                  <label className="label-name" >
                     File Name:
                   </label>
               
@@ -78,7 +78,7 @@ function FileNewForm() {
                   />
               
               <br></br>
-               <div className="label-frame"> <label htmlFor="details" className="label-categories" for="multi-select">Select Category</label>
+               <div className="label-frame"> <label className="label-categories" >Select Category</label>
                {/* <Link to={`/files`}>
               <button className="x-button">X</button>
             </Link> */}

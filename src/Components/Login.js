@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import "./Login.css";
 // import tallTriangle from "./Images/tallTriangle"
 import brownfile from "./Images/brownfile.png";
-import { tallTriangle } from "..";
+
 
 function Login() {
   const [user, loading] = useAuthState(auth);
@@ -23,7 +23,7 @@ function Login() {
       <div className="login-files"></div>
 
       <div className="login-triangle">
-        <img src={brownfile} className="brown-tri" />
+        <img src={brownfile} className="brown-tri" alt="tri" />
 
         <div className="bold-text">
           Cabinet is the perfect app for parent advocates and caregivers.{" "}

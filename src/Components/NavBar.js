@@ -25,40 +25,40 @@
 //   );
 // }
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate, Link } from "react-router-dom";
 
 import "./NavBar.css";
 
-import { auth, db, logout } from "../Services/Firebase";
-import { query, collection, getDocs, where } from "firebase/firestore";
+import { auth,signOut } from "../Services/Firebase";
+//import { query, collection, getDocs, where } from "firebase/firestore";
 import home from "../Components/Images/homeicon.png"
 import log from "../Components/Images/logouticon.png"
-import account from "../Components/Images/accounticon.png"
+// import account from "../Components/Images/accounticon.png"
 import newicon from "../Components/Images/newicon.png"
 
 function NavBar() {
   const [user, loading] = useAuthState(auth);
-  const [name, setName] = useState("");
+  //const [name, setName] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
     if (loading) return;
     if (!user) return navigate("/");
-    const fetchUserName = async () => {
-      try {
-        const q = query(collection(db, "users"), where("uid", "==", user?.uid));
-        const doc = await getDocs(q);
-        const data = doc.docs[0].data();
-        setName(data.name);
-      } catch (err) {
-        console.error(err);
-        alert("An error occured while fetching user data");
-      }
-    };
-    fetchUserName();
+    // const fetchUserName = async () => {
+    //   try {
+    //     const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+    //     const doc = await getDocs(q);
+    //     const data = doc.docs[0].data();
+    //     setName(data.name);
+    //   } catch (err) {
+    //     console.error(err);
+    //     alert(`An error occured while fetching ${name} data`);
+    //   }
+    // };
+    // fetchUserName();
   }, [user, loading, navigate]);
 
   return (
@@ -72,12 +72,12 @@ function NavBar() {
 
       <div className="nav-div">
         <div className="nav-lis">
-          <img className="icons" src={home} />
+          <img className="icons" src={home} alt="home" />
           <Link to={`/files`}>home</Link>
         </div>
 
         <div className="nav-lis">
-          <img className="icons" src={newicon} />
+          <img className="icons" src={newicon} alt="home" />
           <Link to={`/files/file/new`}> New </Link>
         </div>
 
@@ -87,8 +87,8 @@ function NavBar() {
         </div> */}
 
         <div className="nav-lis">
-          <img className="icons" src={log} />
-          <div onClick={logout}>Logout</div>
+          <img className="icons" src={log} alt="log"/>
+          <div onClick={signOut}>Logout</div>
       </div>
       
       

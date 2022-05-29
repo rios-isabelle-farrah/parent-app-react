@@ -23,7 +23,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 function FileDetails() {
   const entireState = useSelector((state) => state);
   
-  const { files, meetings} = entireState;
+  const {meetings} = entireState;
   const dispatch = useDispatch();
   let { id } = useParams();
   // console.log(files,"files of state")
@@ -79,7 +79,7 @@ function FileDetails() {
 
 
 
-  }, [dispatch]);
+  }, [dispatch,id]);
 
 
   if (!id) {
@@ -199,7 +199,8 @@ console.log(documentDefinition,"docDef")
     return (
       <section className="file-section">
       
-         <CenterNav handleReport={handleReport} file={filer} id={id} handleDelete={handleDelete}/> 
+         <CenterNav handleReport={handleReport} file={filer} id={id} 
+         handleDelete={handleDelete}/> 
 
       </section>
     );
