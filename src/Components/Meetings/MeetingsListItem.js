@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-//import "./MeetingListItem.css";
+import "./MeetingListItem.css";
 
 const MeetingsListItem = ({ meeting }) => {
   const { id, file_id, category, details, date } = meeting;
@@ -15,7 +15,7 @@ const MeetingsListItem = ({ meeting }) => {
      
       <td>
         <Link to={`/files/${file_id}/meetings/${id}`}>
-          <button className="edit-button">More</button>
+          <button className="more-b">More</button>
         </Link>
       </td>
     </tr>

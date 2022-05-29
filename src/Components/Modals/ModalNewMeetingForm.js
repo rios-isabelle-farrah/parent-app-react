@@ -3,6 +3,8 @@ import axios from "axios";
 import { useState } from "react";
 import "./ModalNewMeetingForm.css";
 import { apiURL } from "../../util/apiURL";
+import postsubmit from "../Images/postsubmit.PNG"
+import postcancel from "../Images/postcancel.png"
 //import { UserContext } from "../../../Providers/UserProvider";
 
 const API = apiURL();
@@ -65,14 +67,10 @@ const ModalNewMeetingForm = ({ setShowEForm, showEForm }) => {
     <div className="main-left-div">
       <form className="form-meeting-modal" onSubmit={handleSubmit}>
      
-        <table className="meeting-table-one">
-          <tbody>
-            <tr>
-              <td className="data-td">
-                <label htmlFor="date">Date:</label>
-              </td>
-              <td className="data-td">
-                <input
+       
+                <label htmlFor="date"></label>
+       
+                <input className="date"
                   value={date}
                   // value="1111-11-11"
                   type="date"
@@ -80,50 +78,69 @@ const ModalNewMeetingForm = ({ setShowEForm, showEForm }) => {
                   id="date"
                   placeholder="Enter date"
                 />
-              </td>
-            </tr>
-            <tr>
-              <td className="data-td">
-                <label> category:</label>
-              </td>
-              <td className="data-td">
-                <select onChange={handleSelectChange}>
-                  <option value="" defaultValue></option>
+            
+              <br></br>
+            <label htmlFor="category"></label>
+                <select onChange={handleSelectChange}  className="category" >
+                  <option value="select category" defaultValue>select category</option>
                   <option name="iep" value="iep">
                     iep
+                  </option>
+                  <option name="impartial hearing" value="impartial hearing">
+                   impartial hearing
                   </option>
                   <option name="turning_five" value="turning_five">
                    turning five
                   </option>
-      
+                  <option name="school meeting" value="school meeting">
+                  school meeting
+                  </option>
+                  <option name="phone call" value="phone call">
+                  phone call
+                  </option>
+                  <option name="educational" value="educational">
+                  educational
+                  </option>
+                  <option name="medical" value="medical">
+                  medical
+                  </option>
+                  <option name="email" value="email">
+                  email
+                  </option>
+                  <option name="personal" value="personal">
+                  personal
+                  </option>
                 </select>
-              </td>
-            </tr>
-            <tr>
-              <td className="data-td">
-                <label htmlFor="details">Details:</label>
-              </td>
-              <td className="data-td">
+ 
+                {/* <label htmlFor="details">Details:</label> */}
+              
+                <br></br>
                 <textarea
                   id="details"
                   type="text"
                   value={details}
+                  placeholder="details"
                   onChange={handleChange}
                   required
                 />
-              </td>
-            </tr>
+            
 
-    
-          </tbody>
-        </table>
+
+
+
+
+
+
+
         <div className="meeting-buttons">
-          <button className="sb" type="submit">submit</button>
+         <div className="divsub"> <button className="sb" type="submit"></button></div>
+          
+          
           <Link to={`/files/${id}`}>
             <button
               onClick={() => setShowEForm(!showEForm)}
               className="button-cn"
-            >cancel</button>
+            ></button>
           </Link>
         </div>
       </form>

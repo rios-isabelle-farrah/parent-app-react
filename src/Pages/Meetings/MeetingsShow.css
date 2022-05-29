@@ -1,0 +1,119 @@
+.meeting-details{
+display:flex;
+flex-direction: column;
+/* border:blue solid 4px; */
+height: 500px;
+padding-top:20%;
+overflow: scroll;
+
+}
+
+.meeting-details-p{
+align-self:center;
+}
+
+  .contain-file{
+    height: 28%;
+  }
+  /* .buttons-frames>a>button{
+  
+    height: 80px;
+    width: 90px;
+    background-image: url("../../Components/Images/deletemeeting.png");
+    background-repeat: no-repeat;
+    background-size: cover ;
+    background-position-x:center;
+    border:none;
+    outline:none;
+    background-color: transparent;
+   
+  } */
+  /* div.buttons-frames>a{
+    height: 80px;
+    width: 90px;
+  
+  
+    background-image: url("../../Components/Images/editmeeting.png");
+    background-repeat: no-repeat;
+    background-size: cover ;
+    background-position-x:center;
+  } */
+
+  .back{
+      background-color: rgb(53, 51, 51);
+      color:rgb(240, 210, 214);
+      margin-top:5%;
+      margin-left:5%;
+     
+  }
+  .meeting-box{
+      border:rgb(23, 22, 22) solid 4px;
+      width: 60%;
+      align-self:center;
+      background-color: white;
+      font-family:'Courier New', Courier, monospace;
+      overflow: scroll;
+      font-weight:bolder ;
+      padding:5%;
+      height: 50%;
+  }
+
+  /* a>.button-cn{
+    background-image: url("../../Components/Images/postcancel.png");
+    background-repeat: no-repeat;
+  background-size: cover;  
+  background-color: transparent;
+  border:none;
+  width:140px ;
+height:100px ;
+
+  } */
+
+
+
+
+  /* .divsub>.sb{
+    background-image: url("../../Components/Images/postsubmit.PNG");
+    background-repeat: no-repeat;
+  background-size: cover;  
+  background-color: transparent;
+  border:none;
+  width:140px ;
+height:100px ;
+  } */
+
+.button-frames-show{
+  width: 68%;
+ 
+  /* border:brown solid 4px; */
+  display: flex;
+  justify-content: space-between;
+  /* position:absolute; */
+  margin-top: 8%;
+  align-self: center; 
+
+}
+a>.button-frames-edit{
+  height: 80px;
+  width: 90px;
+
+
+  background-image: url("../../Components/Images/editmeeting.png");
+  background-repeat: no-repeat;
+  background-size: cover ;
+  background-position-x:center;
+  border: none;
+}
+
+
+.frames-delete>.button-frames-delete{
+  height: 80px;
+  width: 90px;
+  border:none;
+
+
+  background-image: url("../../Components/Images/deletemeeting.png");
+  background-repeat: no-repeat;
+  background-size: cover ;
+  background-position-x:center;
+}

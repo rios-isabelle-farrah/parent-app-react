@@ -11,6 +11,7 @@ import {
 // import axios from "axios";
 import { apiURL } from "../../util/apiURL";
 
+import "./MeetingsShow.css"
 
 const API = apiURL();
 
@@ -87,29 +88,47 @@ const MeetingsShow = () => {
 
 let meet = entireState['meetings'][meeting_id]
 // console.log(meet,"meeet")
-    return (
-      <div className="expense-details">
-        {/* Change to make and model */}
-        <p className="car-make">
-          file: {files[id]?.child_name}
+    return (<>
+        <Link to={`/files/${id}/meetings`}>
+            <button className="back">Back</button>
+          </Link>
+      <div className="meeting-details">
+    <div className="meeting-box">
+        <p className="meeting-details-p">
+          File: {files[id]?.child_name}
         </p>
-        <p>
+        <p className="meeting-details-p">
           Date:
           {meet?.date}
         </p>
-        <p>meeting Type: {meet?.category}</p>
-        <p>details: {meet?.details}</p>
+        <p className="meeting-details-p">
+          Meeting Type: {meet?.category}</p>
+          <br></br>
+          <p className="meeting-details-p">
+          Details: {meet?.details}</p>
+</div>
+        {/* <div className="buttons"> */}
+          {/* <button onClick={handleDelete}>DELETE</button>
+        
+          */}
 
-        <div className="buttons">
-          <button onClick={handleDelete}>DELETE</button>
-          <Link to={`/files/${id}/meetings`}>
-            <button>BACK</button>
-          </Link>
+          <div className="button-frames-show">
           <Link to={`/files/${id}/meetings/${meeting_id}/edit`}>
-            <button>EDIT</button>
+            <button className="button-frames-edit"></button>
           </Link>
+          <div className="frames-delete">
+
+        <button className="button-frames-delete" onClick={handleDelete}></button>
+          </div>
+      
+      {/* </div> */}
+
+
+
+          
         </div>
       </div>
+      </>
     );
   
 };

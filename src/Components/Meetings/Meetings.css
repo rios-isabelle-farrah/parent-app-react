@@ -21,3 +21,15 @@ table {
 
     padding:15px;
   }
+  .back-a{
+    background-color: rgb(53, 51, 51);
+    color:rgb(240, 210, 214);
+    height: 30px;
+    width: 60px;
+    font-size: 18px;
+  }
+
+  tbody.t-body> tr{
+    border-top:black solid 1px;
+    border-bottom:black solid 1px;
+  }

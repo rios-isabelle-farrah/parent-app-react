@@ -40,12 +40,17 @@ const dispatch = useDispatch();
 // console.log(meetingsArr)
   return (
     <div className="main-e-div">
-      <h2>
-        {files[id]?.child_name} {files[id]?.details} Meetings
-      </h2>
-      <Link to={`/files/${id}`}>
-        <button className="meeting-new-button">go back</button>
+       <Link to={`/files/${id}`}>
+        <button className="back-a">back</button>
       </Link>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <h2>
+       All Meetings in  {files[id]?.child_name} 
+      </h2>
+     
       <table className="meetings-main-table">
         <thead>
           <tr className="head-row">

@@ -122,3 +122,8 @@ div.button-frames>a{
   background-size: cover ;
   background-position-x:center;
 }
+.mainFile-div{
+  /* border:purple solid 3px; */
+  width: 100%;
+  display: flex;
+}

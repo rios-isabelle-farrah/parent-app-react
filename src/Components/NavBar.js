@@ -78,18 +78,22 @@ function NavBar() {
 
         <div className="nav-lis">
           <img className="icons" src={newicon} />
-          <div onClick={logout}>Logout</div>
+          <Link to={`/files/file/new`}> New </Link>
         </div>
 
-        <div className="nav-lis">
+        {/* <div className="nav-lis">
           <img className="icons" src={account} />
           <Link to={`/files/file/new`}> new </Link>
-        </div>
+        </div> */}
 
         <div className="nav-lis">
           <img className="icons" src={log} />
-          <div>account</div>
-        </div>
+          <div onClick={logout}>Logout</div>
+      </div>
+      
+      
+      
+      
       </div>
     </div>
   );

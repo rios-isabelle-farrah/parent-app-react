@@ -66,63 +66,70 @@ const MeetingsEdit = () => {
     <div className="main-left-div">
       <form className="form-meeting-modal" onSubmit={handleSubmit}>
      
-        <table className="meeting-table-one">
-          <tbody>
-            <tr>
-              <td className="data-td">
-                <label htmlFor="date">Date:</label>
-              </td>
-              <td className="data-td">
-                <input
-                  value={date}
-                  // value="1111-11-11"
-                  type="date"
-                  onChange={handleChange}
-                  id="date"
-                  placeholder="Enter date"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td className="data-td">
-                <label> category:</label>
-              </td>
-              <td className="data-td">
-                <select onChange={handleSelectChange}>
-                  <option value="" defaultValue></option>
-                  <option name="iep" value="iep">
-                    iep
+      <label htmlFor="date"></label>
+       
+       <input className="date"
+         value={date}
+         // value="1111-11-11"
+         type="date"
+         onChange={handleChange}
+         id="date"
+         placeholder="Enter date"
+       />
+   
+     <br></br>
+   <label htmlFor="category"></label>
+       <select onChange={handleSelectChange}  className="category" >
+         <option value="select category" defaultValue>select category</option>
+         <option name="iep" value="iep">
+           iep
+         </option>
+         <option name="impartial hearing" value="impartial hearing">
+                   impartial hearing
                   </option>
                   <option name="turning_five" value="turning_five">
                    turning five
                   </option>
-      
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td className="data-td">
-                <label htmlFor="details">Details:</label>
-              </td>
-              <td className="data-td">
-                <textarea
-                  id="details"
-                  type="text"
-                  value={details}
-                  onChange={handleChange}
-                  required
-                />
-              </td>
-            </tr>
-
+                  <option name="school meeting" value="school meeting">
+                  school meeting
+                  </option>
+                  <option name="phone call" value="phone call">
+                  phone call
+                  </option>
+                  <option name="educational" value="educational">
+                  educational
+                  </option>
+                  <option name="medical" value="medical">
+                  medical
+                  </option>
+                  <option name="email" value="email">
+                  email
+                  </option>
+                  <option name="personal" value="personal">
+                  personal
+                  </option>
     
-          </tbody>
-        </table>
+       </select>
+
+       {/* <label htmlFor="details">Details:</label> */}
+     
+       <br></br>
+       <textarea
+         id="details"
+         type="text"
+         value={details}
+         placeholder="details"
+         onChange={handleChange}
+         required
+       />
+
+
+
         <div className="meeting-buttons">
-          <button className="sb" type="submit">submit</button>
+          <div className="divsub"><button className="sb" type="submit"></button></div>
           
           <Link to={`/files/${id}/meetings`}>
-              <button className="new-can">Cancel</button>
+              <button className="button-cn"></button>
             </Link>
         </div>
       </form>
