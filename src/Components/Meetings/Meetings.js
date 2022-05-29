@@ -37,7 +37,7 @@ const dispatch = useDispatch();
 //       history.push("/");
 //     }
 //   }, [user, history]);
-console.log(meetingsArr)
+// console.log(meetingsArr)
   return (
     <div className="main-e-div">
       <h2>

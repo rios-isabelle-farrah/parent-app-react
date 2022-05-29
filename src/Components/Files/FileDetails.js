@@ -26,11 +26,11 @@ function FileDetails() {
   const { files, meetings} = entireState;
   const dispatch = useDispatch();
   let { id } = useParams();
-  console.log(files,"files of state")
+  // console.log(files,"files of state")
   // const user = useContext(UserContext);
-  console.log(entireState,'state entire')
+  // console.log(entireState,'state entire')
   const meetingsArr = Object.values(meetings);
-  console.log(meetingsArr,('meetings'))
+  // console.log(meetingsArr,('meetings'))
  
   let navigate = useNavigate();
 

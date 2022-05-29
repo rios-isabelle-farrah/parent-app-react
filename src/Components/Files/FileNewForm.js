@@ -37,7 +37,7 @@ function FileNewForm() {
   };
   const handleSelectChange = (e) => {
     setFile({ ...file, details: e.target.value });
-    console.log(e.target.value,"category")
+    // console.log(e.target.value,"category")
   };
 
   const handleSubmit = async (e) => {

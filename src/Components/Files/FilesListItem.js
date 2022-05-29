@@ -6,7 +6,7 @@ import React from "react";
 
 
 const FilesListItem = ({ filesArr }) => {
- console.log(filesArr, "all files array")
+//  console.log(filesArr, "all files array")
 
  return (
   <div className="cabinet-list">

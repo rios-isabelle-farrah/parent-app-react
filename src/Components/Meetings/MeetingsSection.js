@@ -28,7 +28,7 @@ const Files = () => {
     };
     fetchAllFiles();
   }, [dispatch]);
-console.log(filesArr, "files array")
+// console.log(filesArr, "files array")
 
   return (
  

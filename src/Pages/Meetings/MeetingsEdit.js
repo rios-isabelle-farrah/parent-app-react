@@ -4,19 +4,20 @@ import { useState } from "react";
 // import "./ModalNewMeetingForm.css";
 import { apiURL } from "../../util/apiURL";
 //import { UserContext } from "../../../Providers/UserProvider";
+// import { updateMeetingById } from '../../util/networkRequest';
 
 const API = apiURL();
 const MeetingsEdit = () => {
 //   const user = useContext(UserContext);
   let navigate = useNavigate();
-  const { id,meeting_id } = useParams();
+  const { id, meeting_id } = useParams();
   const [meeting, setMeeting] = useState({
    category: "",
    details: "",
     date: new Date(),
   });
 
-  const updateMeeting = async (updatedMeeting) => {
+  const updateMeeting = async (updatedMeeting,meeting_id,id) => {
     try {
     
         await axios.put(
@@ -44,7 +45,7 @@ const MeetingsEdit = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await updateMeeting(meeting);
+      await updateMeeting(meeting,meeting_id,id);
      return navigate(`/files/${id}/meetings`);
     } catch (error) {
       console.log(error);
@@ -119,6 +120,7 @@ const MeetingsEdit = () => {
         </table>
         <div className="meeting-buttons">
           <button className="sb" type="submit">submit</button>
+          
           <Link to={`/files/${id}/meetings`}>
               <button className="new-can">Cancel</button>
             </Link>

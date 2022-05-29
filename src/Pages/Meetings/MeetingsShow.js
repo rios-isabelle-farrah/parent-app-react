@@ -26,7 +26,7 @@ const MeetingsShow = () => {
  
   const deleteMeeting= async () => {
     try {
-      await deleteMeetingByID(meeting_id);
+      await deleteMeetingByID(id,meeting_id);
     } catch (err) {
       console.log(err);
     }
@@ -35,7 +35,7 @@ const MeetingsShow = () => {
   const handleDelete = async () => {
     try {
       await deleteMeeting();
-     return navigate("/meeting");
+     return navigate(`/files/${id}/meetings`);
     } catch (error) {
       console.log(error);
     }
@@ -79,14 +79,14 @@ const MeetingsShow = () => {
 //   }, [user, history]);
 
 
-console.log(entireState,"both")
+// console.log(entireState,"both")
   //const { category, details, date } = meeting;
-  console.log(meeting,"const meeting")
+  // console.log(meeting,"const meeting")
 //   let newDate = new Date(date);
 //   newDate.setDate(newDate.getDate(date) + 1);
 
 let meet = entireState['meetings'][meeting_id]
-console.log(meet,"meeet")
+// console.log(meet,"meeet")
     return (
       <div className="expense-details">
         {/* Change to make and model */}

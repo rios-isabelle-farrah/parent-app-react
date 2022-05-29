@@ -12,11 +12,10 @@ export const getAllFilesFN = async () => {
 export const updateFileById = async (id, updatedFile) => {
   if (id) {
     const editedFile = await axios.put(
-      `${API}/files/${id}}`,
-      updatedFile
-    );
+      `${API}/files/${id}`, updatedFile);
     return editedFile;
-  }
+    }
+    console.log(updatedFile,"redux")
 };
 
 export const getFileByID = async (id) => {
