@@ -52,7 +52,7 @@ function FileNewForm() {
     }
   };
 
-  const { child_name} = file;
+  const { child_name,details} = file;
 
   return (
     <div className="background">
@@ -65,7 +65,7 @@ function FileNewForm() {
             </Link>
           </div>
                   <label className="label-name" >
-                    File Name:
+                    Cabinet Name:
                   </label>
               
                   <input
@@ -78,32 +78,25 @@ function FileNewForm() {
                   />
               
               <br></br>
-               <div className="label-frame"> <label className="label-categories" >Select Category</label>
-               {/* <Link to={`/files`}>
-              <button className="x-button">X</button>
-            </Link> */}
-            </div>  
+               {/* <div className="label-frame"> <label className="label-categories" >Select Category</label>
+            </div>   */}
                
                   <div className="select select-multiple">
-<select onChange={handleSelectChange} id="multi-select" multiple>
-                  {/* <option className="option-class" value="" defaultValue></option> */}
+{/* <select onChange={handleSelectChange} id="multi-select" multiple>
                   <option className="option-class" name="meetings" value="meetings">
                    Meetings
                   </option>
-                  {/* <option className="option-class" name="reimbursements" value="reimbursements">
-                 Reimbursements
-                  </option>
-                  <option className="option-class" name="behaviors" value="behaviors">
-                Behaviors
-                  </option>
-                  <option className="option-class" name="gut_health" value="gut_health">
-                Gut Health
-                  </option>
-                  <option className="option-class" name="milestones" value="milestones">
-                  Milestones
-                  </option> */}
-
-                </select>
+                </select> */}
+                   <label className="label-name">Cabinet Description:</label>
+          <input
+              className="input-class"
+              id="details"
+              type="text"
+              value={details}
+              onChange={handleChange}
+              required
+           
+          />
                 </div>
                 <span className="focus"></span>
    
@@ -113,9 +106,7 @@ function FileNewForm() {
  
             </button>
 
-            {/* <Link to={`/files`}>
-              <button className="cancel">Cancel</button>
-            </Link> */}
+            
           </div>
         </form>
       </div>

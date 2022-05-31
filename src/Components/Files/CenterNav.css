@@ -6,99 +6,93 @@
 
 
 
+
   
   
 
   
-  
-  
-  
-  /* .modal-a{
-    border: red 2px solid;
-    width: 100%;
-  
-  } */
  
 
   .mainFile-div{
    background-image: url("../Images/plainwall.png");
    background-repeat: no-repeat;
-   background-size: cover ;
-   /* border:yellow solid 12px; */
+   background-size: cover;
   background-position-y: bottom;
-/* height:auto!important;
-   min-height:88vh; */
+  background-position-x: center;
    width: 100%;
    display: flex;
    flex-direction: column;
    height: 100%;
    position:fixed;
-
-  
- 
-  
   }
   .cabinet-frame{
-    /* position: absolute; */
-    /* height: 58%; */
-    width: 70%;
+    
+/* width: 250px; */
+/* height: 90%; */
+    width: 200px;
+    height: 500px;
     background-image: url("../Images/cabinetframe.png");
     background-repeat: no-repeat;
-    background-size: cover ;
+    background-size: contain ;
     background-position-x:center;
     align-self: center;
-    /* margin-top:2%; */
-    margin-bottom:38%;
+    /* margin-top:12%; */
+
     display: flex;
     flex-direction: column;
     align-items: center;
    justify-content: center;
-   padding-top:14%;
-   /* padding-bottom:6%; */
-   position: relative;
-  
+   padding-top:5%;
+   padding-bottom:6%;
+   /* position: relative; */
+  margin-bottom: 5%;
+  /* position: fixed; */
   }
-  .contain-file{
-   /* align-self: center; */
-    /* height:30px; */
-    width: 100%;
-   
-  }
-.addmeeting{
+
+/* .addmeeting{
   width: 80%;
   
-}
-.nav-meetings{
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-.contain-file >a{
-  display: flex;
-  justify-content: center;
-}
-.contain-file>.nav-meetings{
-height: 100%;
-}
-.contain-file>a{
-height: 100%;
-}
-/* img.addmeeting{
-  height: 200px;
 } */
+div.contain-file{
+  height: 120px;
+  margin:0;
+}
+div.contain-file>a{
+height: 100px;
+}
+
+div.nav-meetings{
+  height: 100px;
+}
+
+
+
+
+img.addmeeting{
+height: 120px;
+/* width: 190px; */
+margin:0px;
+}
+
+
+
+
+
+
+
+
 .button-frames{
-  width: 88%;
-  height: 58%;
+  width: 68%;
+  height: 15%;
   /* border:brown solid 4px; */
   display: flex;
   justify-content: space-between;
   /* position:absolute; */
-  margin-top: 8%;
+  margin-top: 2%;
   align-self: center;
+  /* z-index:3; */
 }
-.contain-file{
-  height: 28%;
-}
+
 .button-frames>.button-delete{
 
   height: 80px;
@@ -121,9 +115,4 @@ div.button-frames>a{
   background-repeat: no-repeat;
   background-size: cover ;
   background-position-x:center;
-}
-.mainFile-div{
-  /* border:purple solid 3px; */
-  width: 100%;
-  display: flex;
 }

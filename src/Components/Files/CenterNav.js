@@ -11,25 +11,19 @@ const CenterNav = ({ file, id, handleDelete, handleReport }) => {
 
   return (
     <div className="mainFile-div">
-
       <div className="button-frames">
         <button className="button-delete" onClick={handleDelete}></button>
         <Link to={`/files/${id}/edit`}></Link>
       </div>
 
       {showEForm && (
-          <ModalNewMeetingForm
-            setShowEForm={setShowEForm}
-            showEForm={showEForm}
-          />
-        )}
+        <ModalNewMeetingForm
+          setShowEForm={setShowEForm}
+          showEForm={showEForm}
+        />
+      )}
       <div className="cabinet-frame">
-        
-       
-
         <div className="contain-file">
-        
-       
           <div
             className="nav-meetings"
             onClick={() => setShowEForm(!showEForm)}

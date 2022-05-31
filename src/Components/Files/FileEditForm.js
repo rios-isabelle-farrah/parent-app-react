@@ -1,9 +1,9 @@
-import { useState} from "react";
+import { useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { addFile } from "../../Store/Actions/filesActions";
 import { useSelector, useDispatch } from "react-redux";
 import { updateFileById } from "../../util/networkRequest";
-// import "../Style/Cars/CarEditForm.css";
+ import "./FileEditForm.css";
 // import { UserContext } from "../../Providers/UserProvider";
 
 function FileEditForm() {
@@ -15,11 +15,9 @@ function FileEditForm() {
   // const file = files[id];
 
   const [fileInput, setFileInput] = useState({
-    id:id,
+    id: id,
     child_name: "",
-   details: "",
-  
-
+    details: "",
   });
 
   const updateFile = async (updatedFile, id) => {
@@ -29,70 +27,67 @@ function FileEditForm() {
         dispatch(addFile(editedFile));
       }
     } catch (error) {
-      console.log(error,files);
+      console.log(error, files);
     }
   };
 
- 
-
-
-
-
-
-
-
-
-
-
-
   const handleChange = (e) => {
-    console.log(e.target.value,"handlehchange")
+    console.log(e.target.value, "handlehchange");
     setFileInput({ ...fileInput, [e.target.id]: e.target.value });
   };
 
- 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await updateFile(fileInput, id);
-return navigate(`/files/${id}`);
+    return navigate(`/files/${id}`);
   };
 
-  const {child_name,details} =
-fileInput;
-console.log(fileInput,"inputfileee3eiouhuh")
+  const { child_name, details } = fileInput;
+  console.log(fileInput, "inputfileee3eiouhuh");
 
   return (
-    <div className="wrap-edit">
+    <div className="background">
+      <div className="backgroundA">
+        <form className="form-newfile" onSubmit={handleSubmit}>
+          <div className="x">
+            <Link to={`/files${id}`}>
+              <button className="x-button">X</button>
+            </Link>
+          </div>
+          <label className="label-name">Cabinet Description:</label>
+          <input
+            className="input-class"
+            value={child_name}
+            type="text"
+            onChange={handleChange}
+            id="child_name"
+            required
+            // placeholder="Enter your name"
+          />
 
-      <form className="edit-form-a" onSubmit={handleSubmit}>
-        <label>Cabinet Name:</label>
-        <input
-          value={child_name}
-          type="text"
-          onChange={handleChange}
-          id="child_name"
-          placeholder="Enter your name"
-        />
-
-        <label htmlFor="make">details:</label>
-
-        <input
-          value={details}
-          type="text"
-          onChange={handleChange}
-          id="details"
-          placeholder="Enter details"
-        />
-        
-      
-          <button type="submit">Submit</button>
-          <Link to={`/files/${id}`}>
-            <button>Cancel</button>
-          </Link>
-  
-      </form>
-    </div>
+<br></br>
+<div className="select select-multiple">
+<label className="label-name">Cabinet Details:</label>
+          <input
+              className="input-class"
+              id="details"
+              type="text"
+              value={details}
+              onChange={handleChange}
+              required
+           
+          />
+ </div>
+                <span className="focus"></span>
    
+<div className="submit-div-e">
+            <button onClick={handleSubmit} className="submit-e" type="submit">
+ 
+            </button>
+            </div>
+        </form>
+      </div>
+    </div>
   );
 }
 
