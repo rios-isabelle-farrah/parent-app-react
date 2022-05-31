@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.704fa2d5.css",
+    "main.js": "/static/js/main.52f9d238.js",
+    "static/js/787.13f57b9f.chunk.js": "/static/js/787.13f57b9f.chunk.js",
+    "static/media/editmeeting.png": "/static/media/editmeeting.048d2daa8b7288c72cda.png",
+    "static/media/deletemeeting.png": "/static/media/deletemeeting.fd1fd8ad47484e62af23.png",
+    "static/media/postsubmit.PNG": "/static/media/postsubmit.781be24a3db6525c2049.PNG",
+    "static/media/postcancel.png": "/static/media/postcancel.aabfcc78a96a7ccdf30e.png",
+    "static/media/loginfiles.png": "/static/media/loginfiles.dabb5e3e89f09a22fbfb.png",
+    "static/media/cork.jpeg": "/static/media/cork.6afd91b0976be97b4250.jpeg",
+    "static/media/editcabinet.png": "/static/media/editcabinet.2c95bbfd75db5ed740fe.png",
+    "static/media/deletecabinet.png": "/static/media/deletecabinet.b134553936fcbcf20bcd.png",
+    "static/media/plainwall.png": "/static/media/plainwall.a41cf4f84fe58cc2ea02.png",
+    "static/media/cabinetframe.png": "/static/media/cabinetframe.fc9bf4f720e14d99bb55.png",
+    "static/media/talltriangle.png": "/static/media/talltriangle.963b194a0d91255ad031.png",
+    "static/media/meetingsreportcabinet.png": "/static/media/meetingsreportcabinet.31787a7ad7a62cc8241d.png",
+    "static/media/newmeetingcabinet.png": "/static/media/newmeetingcabinet.645a9d8e6ee3276b6e69.png",
+    "static/media/allmeetingscabinet.png": "/static/media/allmeetingscabinet.3d15076536bd9f70fb81.png",
+    "index.html": "/index.html",
+    "main.704fa2d5.css.map": "/static/css/main.704fa2d5.css.map",
+    "main.52f9d238.js.map": "/static/js/main.52f9d238.js.map",
+    "787.13f57b9f.chunk.js.map": "/static/js/787.13f57b9f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.704fa2d5.css",
+    "static/js/main.52f9d238.js"
+  ]
+}

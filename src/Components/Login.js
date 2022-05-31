@@ -32,7 +32,7 @@ function Login() {
         It allows you to organize and store important data like special education meetings right from your phone. 
         </div>
         <button className="sign-in" onClick={signInWithGoogle}>
-   Continue with Google Sign In
+ Google Sign In
       </button>
       </div>
 
