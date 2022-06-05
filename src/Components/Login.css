@@ -15,8 +15,8 @@
     background-repeat: no-repeat;
 }
 .login-triangle{
-    margin-top:5%;
-    height: 383px;
+    /* margin-top:1%; */
+    height: 453px;
     width: 100%;
     background-image: url("../Components/Images/talltriangle.png");
     background-repeat: no-repeat;
@@ -27,6 +27,7 @@
     color:white;
  position: absolute;
  z-index:1;
+
 }
 .brown-tri{
     height: 30px;
@@ -34,6 +35,12 @@
     align-self: center;
     margin-top:15%;
 }
+.grey-x{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 
 div.bold-text {
     font-family: 'AileronRegular';
@@ -61,7 +68,7 @@ div.bold-text {
      border-radius: 15px;
      border: solid 1px #F8DEC9;
      width:80%;
-     height: 100px;
+     height: 80px;
      align-self: center;
      font-size:20px;
      z-index: 9;
@@ -74,3 +81,103 @@ div.bold-text {
      padding-bottom: 10px;
      margin-bottom:1%;
  }
+
+
+
+
+
+
+
+
+
+
+
+
+ @media only screen and (min-width: 600px) {
+    .login-div{
+        width: 100%;
+          /* border: black solid 3px; */
+          height:auto!important;
+          min-height:100vh;
+      }
+      .login-files{
+          /* border: grey solid 2px; */
+          height: 210px;
+          width: 100%;
+        
+          background-image: url("../Components/Images/loginfiles.png");
+          background-position: bottom;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position-y:60%;
+      }
+      /* .login-triangle{
+          margin-top:14%;
+          height: 953px;
+          width: 100%;
+          background-image: url("../Components/Images/talltriangle.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          display: flex;
+          flex-direction: column;
+          color:white;
+       position: absolute;
+       z-index:1;
+      } */
+      .brown-tri{
+          height: 80px;
+          width: 104px;
+          align-self: center;
+          margin-top:2%;
+      }
+      
+      div.bold-text {
+          font-family: 'AileronRegular';
+          font-weight: normal;
+          font-style: normal;
+          color:white;
+          width: 90%;
+          align-self: center;
+          font-size:50px;
+          font-weight: bolder;
+          margin-top:5%;
+          align-self: center;
+      
+       }
+       .small-font{
+           font-size: 30px;
+          font-family: 'Abel', sans-serif;
+          color:white;
+          width: 40%;
+          /* align-self:left ; */
+          /* margin-top:5%; */
+       }
+       .sign-in{
+           background-color:    #F8DEC9;
+           color:#5E6A70;
+           border-radius: 15px;
+           border: solid 1px #F8DEC9;
+           width:80%;
+           height: 80px;
+           align-self: center;
+           font-size:20px;
+           z-index: 9;
+           margin-top:8%;
+           font-family:Arial, Helvetica, sans-serif;
+           font-weight:500;
+           padding-left: 20px;
+           padding-right: 20px;
+           padding-top: 10px;
+           padding-bottom: 10px;
+           margin-bottom:1%;
+       }
+       .grey-x{
+           display: flex;
+           flex-direction: row;
+           width: 90%;
+           align-self:center;
+           padding-top:0;
+           margin:0;
+       }
+  }

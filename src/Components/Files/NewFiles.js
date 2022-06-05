@@ -29,7 +29,7 @@ const Files = () => {
   return (
     <div className="cabinet-files">
       <div className="grey-header">
-        <Link to={`/files/file/new`}>Create New Files +</Link>
+        <Link to={`/files/file/new`}>Create New Cabinet +</Link>
       </div>
 
       {/* <Link to={`/files`}>

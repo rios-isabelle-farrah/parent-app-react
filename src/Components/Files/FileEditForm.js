@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { addFile } from "../../Store/Actions/filesActions";
 import { useSelector, useDispatch } from "react-redux";
-import { updateFileById } from "../../util/networkRequest";
- import "./FileEditForm.css";
+import { updateFileById, getFileByID } from "../../util/networkRequest";
+import "./FileEditForm.css";
 // import { UserContext } from "../../Providers/UserProvider";
 
 function FileEditForm() {
@@ -42,6 +42,23 @@ function FileEditForm() {
     return navigate(`/files/${id}`);
   };
 
+  // useEffect( async () => {
+  //   const fileInfo = await getFileByID(id)
+
+  // }, []);
+
+
+  useEffect(() => {
+    async function fetchData() {
+      // You can await here
+      const fileInfo = await getFileByID(id);
+      setFileInput(fileInfo);
+    }
+    fetchData();
+  }, []); // Or [] if effect doesn't need props or state
+  
+
+
   const { child_name, details } = fileInput;
   console.log(fileInput, "inputfileee3eiouhuh");
 
@@ -50,7 +67,7 @@ function FileEditForm() {
       <div className="backgroundA">
         <form className="form-newfile" onSubmit={handleSubmit}>
           <div className="x">
-            <Link to={`/files${id}`}>
+            <Link to={`/files/${id}`}>
               <button className="x-button">X</button>
             </Link>
           </div>
@@ -65,26 +82,27 @@ function FileEditForm() {
             // placeholder="Enter your name"
           />
 
-<br></br>
-<div className="select select-multiple">
-<label className="label-name">Cabinet Details:</label>
-          <input
+          <br></br>
+          <div className="select select-multiple">
+            <label className="label-name">Cabinet Details:</label>
+            <input
               className="input-class"
               id="details"
               type="text"
               value={details}
               onChange={handleChange}
               required
-           
-          />
- </div>
-                <span className="focus"></span>
-   
-<div className="submit-div-e">
-            <button onClick={handleSubmit} className="submit-e" type="submit">
- 
-            </button>
-            </div>
+            />
+          </div>
+          <span className="focus"></span>
+
+          <div className="submit-div-e">
+            <button
+              onClick={handleSubmit}
+              className="submit-e"
+              type="submit"
+            ></button>
+          </div>
         </form>
       </div>
     </div>

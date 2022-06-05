@@ -70,3 +70,10 @@ export const deleteMeetingByID = async (id,meeting_id) => {
     return data.payload;
   }
 };
+
+export const getMeetingById = async (id,meeting_id) => {
+  if (id) {
+    let { data } = await axios.get(`${API}/files/${id}/meetings/${meeting_id}`);
+    return data.payload;
+  }
+};

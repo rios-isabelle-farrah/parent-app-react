@@ -28,14 +28,20 @@ function Login() {
         <div className="bold-text">
           Cabinet is the perfect app for parent advocates and caregivers.{" "}
         </div>
-        <div className="small-font">
+<br>
+</br>
+      <div className="grey-x">
+
+      <div className="small-font">
         It allows you to organize and store important data like special education meetings right from your phone. 
         </div>
         <button className="sign-in" onClick={signInWithGoogle}>
  Google Sign In
       </button>
       </div>
-
+      </div>
+{/* <div className="bottom-grey">
+</div> */}
    
     </div>
   );

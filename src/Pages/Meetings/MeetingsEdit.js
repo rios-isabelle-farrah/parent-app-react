@@ -1,6 +1,8 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { updateMeetingById, getMeetingById } from "../../util/networkRequest";
+import { useSelector, useDispatch } from "react-redux";
 // import "./ModalNewMeetingForm.css";
 import { apiURL } from "../../util/apiURL";
 //import { UserContext } from "../../../Providers/UserProvider";
@@ -10,6 +12,10 @@ const API = apiURL();
 const MeetingsEdit = () => {
 //   const user = useContext(UserContext);
   let navigate = useNavigate();
+  const meetings = useSelector((state) => state.files);
+  const dispatch = useDispatch();
+
+
   const { id, meeting_id } = useParams();
   const [meeting, setMeeting] = useState({
    category: "",
@@ -52,9 +58,26 @@ const MeetingsEdit = () => {
     }
   };
 
+
+  useEffect(() => {
+    async function fetchData() {
+      // You can await here
+      const meetingInfo = await getMeetingById(id,meeting_id);
+
+      setMeeting(meetingInfo);
+    }
+    fetchData();
+  }, []); // Or [] if effect doesn't need props or state
+  
+
+
   const { category, details, date } = meeting;
   let newDate = new Date(date);
   newDate.setDate(newDate.getDate(date) + 1);
+
+
+
+
 
 //   useEffect(() => {
 //     if (!user) {
