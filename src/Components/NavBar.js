@@ -73,12 +73,12 @@ function NavBar() {
       <div className="nav-div">
         <div className="nav-lis">
           <img className="icons" src={home} alt="home" />
-          <Link to={`/files`}>home</Link>
+          <Link to={`/files`}>Home</Link>
         </div>
 
         <div className="nav-lis">
           <img className="icons" src={newicon} alt="home" />
-          <Link to={`/files/file/new`}> New </Link>
+          <Link to={`/files/file/new`}> New Cabinet </Link>
         </div>
 
         {/* <div className="nav-lis">

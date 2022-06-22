@@ -44,6 +44,9 @@ align-self:center;
       color:rgb(240, 210, 214);
       margin-top:5%;
       margin-left:5%;
+      width:52px;
+      height: 26px;
+      font-size: 16px;
      
   }
   .meeting-box{

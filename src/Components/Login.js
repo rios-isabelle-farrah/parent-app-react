@@ -26,7 +26,7 @@ function Login() {
         <img src={brownfile} className="brown-tri" alt="tri" />
 
         <div className="bold-text">
-          Cabinet is the perfect app for parent advocates and caregivers.{" "}
+          Cabinet is the perfect app for advocates and caregivers.{" "}
         </div>
 <br>
 </br>
@@ -36,7 +36,7 @@ function Login() {
         It allows you to organize and store important data like special education meetings right from your phone. 
         </div>
         <button className="sign-in" onClick={signInWithGoogle}>
- Google Sign In
+ Sign In
       </button>
       </div>
       </div>

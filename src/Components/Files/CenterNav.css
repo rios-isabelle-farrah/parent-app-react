@@ -29,21 +29,21 @@
     
 /* width: 250px; */
 /* height: 90%; */
-    width: 200px;
-    height: 500px;
+    width: 290px;
+    height:490px;
     background-image: url("../Images/cabinetframe.png");
     background-repeat: no-repeat;
-    background-size: contain ;
+    background-size: cover ;
     background-position-x:center;
     align-self: center;
-    margin-top:19%;
+    margin-top:0%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
    justify-content: center;
-   padding-top:5%;
-   padding-bottom:6%;
+   padding-top:99px;
+   /* padding-bottom:10px; */
    /* position: relative; */
   /* margin-bottom: 5%; */
   /* position: fixed; */
@@ -54,24 +54,28 @@
   
 } */
 div.contain-file{
-  height: 120px;
+  height: 140px;
   margin:0;
 }
 div.contain-file>a{
-height: 100px;
+height: 120px;
 }
 
 div.nav-meetings{
-  height: 100px;
+  height: 120px;
 }
 
 
 
 
 img.addmeeting{
-height: 120px;
-/* width: 190px; */
-margin:0px;
+  height: 150px;
+  width: 210px;
+
+
+
+  /* margin-top: 19px; */
+
 }
 
 
@@ -88,15 +92,15 @@ margin:0px;
   display: flex;
   justify-content: space-between;
   /* position:absolute; */
-  margin-top: 2%;
+  margin-top: 33px;
   align-self: center;
   /* z-index:3; */
 }
 
 .button-frames>.button-delete{
 
-  height: 80px;
-  width: 60px;
+  height: 100px;
+  width: 80px;
   background-image: url("../Images/deletecabinet.png");
   background-repeat: no-repeat;
   background-size: cover ;
@@ -107,12 +111,227 @@ margin:0px;
  
 }
 div.button-frames>a{
-  height: 80px;
-  width: 60px;
+  height: 100px;
+  width: 80px;
 
 
   background-image: url("../Images/editcabinet.png");
   background-repeat: no-repeat;
   background-size: cover ;
   background-position-x:center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 600px) {
+
+
+
+  .mainFile-div{
+    background-image: url("../Images/plainwall.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+   background-position: top 10px,right 0px;
+   /* background-position-x: center; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position:fixed;
+    padding-bottom: 33%;
+   }
+   .cabinet-frame{
+     
+ /* width: 250px; */
+ /* height: 90%; */
+     width: 300px;
+     height: 600px;
+     background-image: url("../Images/cabinetframe.png");
+     background-repeat: no-repeat;
+     background-size: cover ;
+     background-position-x:center;
+     align-self: center;
+     margin-top:0%;
+ 
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+    justify-content: center;
+    padding-top:115px;
+    padding-bottom:2%;
+    /* position: relative; */
+   margin-bottom: 55px;
+   /* position: fixed; */
+   }
+ 
+ /* .addmeeting{
+   width: 80%;
+   
+ } */
+ div.contain-file{
+   height: 120px;
+   margin:0;
+ }
+ div.contain-file>a{
+ height: 100px;
+ }
+ 
+ div.nav-meetings{
+   height: 100px;
+ }
+ 
+ 
+ 
+ 
+ img.addmeeting{
+ height: 120px;
+ width: 203px;
+ margin:0px;
+ }
+ 
+ 
+ .button-frames{
+   width: 48%;
+   height: 200px;
+   /* border:brown solid 4px; */
+   display: flex;
+   justify-content: space-between;
+   /* position:absolute; */
+   margin-top: 111px;
+   align-self: center;
+   /* z-index:3; */
+ }
+ 
+ .button-frames>.button-delete{
+ 
+   height: 134px;
+   width: 100px;
+   background-image: url("../Images/deletecabinet.png");
+   background-repeat: no-repeat;
+   background-size: cover ;
+   background-position-x:center;
+   border:none;
+   outline:none;
+   background-color: transparent;
+  
+ }
+ div.button-frames>a{
+  height: 134px;
+  width: 100px;
+ 
+ 
+   background-image: url("../Images/editcabinet.png");
+   background-repeat: no-repeat;
+   background-size: cover ;
+   background-position-x:center;
+ }
+
+
+
+
+
+
+
 }

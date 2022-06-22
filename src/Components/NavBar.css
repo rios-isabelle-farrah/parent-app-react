@@ -34,3 +34,86 @@ align-self: center;
     text-decoration: none;
     
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @media only screen and (min-width: 600px) {
+        .nav-component{
+            height: 62px;
+            width: 100%;
+            background-color: white;
+            /* border:orange solid 8px; */
+            top:0;
+            position:fixed;
+            z-index:7;
+        padding-top:1%;
+        }
+        .nav-div{
+            display: flex;
+            justify-content: space-around;
+        
+        }
+        .nav-lis{
+            /* border:green solid 5px; */
+            display: flex;
+            flex-direction:row-reverse;
+        /* justify-content: space-between; */
+        font-size: 30px;
+        width: fit-content;
+        /* border:red solid 1px; */
+        
+        }
+        .icons{
+            height: 30px;
+            width: 30px;
+        }
+        
+        .nav-lis > img {
+        align-self: center;
+        
+        }
+        
+        .nav-lis > a {
+            text-decoration: none;
+            font-size: 30;
+     
+            }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
